@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="uk"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#10392c"><title>Solar Demo · Генератор КП</title>
+<link rel="stylesheet" href="styles.css"><script src="app.js" defer></script></head>
+<body>
+<div class="banner"><span>☀ SOLAR DEMO · НЕЗАЛЕЖНИЙ НАВЧАЛЬНИЙ СИМУЛЯТОР · ВИГАДАНІ ДАНІ</span>
+<div class="banner-links"><a target="_top" href="../../index.html">⌂ Домой</a><a target="_top" href="../../projects/proposal-builder.html">Про проєкт ↗</a><button id="reset" type="button">Скинути демо ↻</button></div></div>
+<div class="shell"><aside class="sidebar"><div class="brand"><i>☀</i><div><strong>Solar Demo</strong><small>Генератор КП</small></div></div>
+<nav aria-label="Розділи"><button data-tab="proposal" aria-current="page">Комерційна пропозиція</button><button data-tab="settings">Налаштування</button><button data-tab="designs">HTML-дизайни</button><button data-tab="codes">Коди полів</button><button data-tab="history">Збережені пропозиції</button></nav>
+<div class="sidebar-note"><strong>DEMO EDITION</strong><p>Тільки навчальні формули, вигадане обладнання та умовні коефіцієнти. Сервера й реальних API немає. Дані залишаються у браузері.</p></div></aside>
+<main class="main"><header class="top"><div><span class="eyebrow">PORTFOLIO / SAFE DEMO</span><h1 id="pageTitle">Комерційна пропозиція</h1><p id="pageSubtitle">Оберіть параметри та сформуйте навчальну комерційну пропозицію.</p></div>
+<div class="actions"><button id="save" class="btn secondary" type="button">↓ Зберегти чернетку</button><button id="preview" class="btn primary" type="button">Сформувати HTML ↗</button></div></header>
+<div class="alert"><b>Демонстрація, не інженерний розрахунок.</b> Значення, формули та прайс вигадані спеціально для цього стенда. Це не копія production-алгоритмів і не реальна комерційна пропозиція.</div>
+<p id="message" class="message" aria-live="polite" role="status"></p>
+<section id="view-proposal" class="view active"><div class="form-grid">
+<article class="card span"><div class="card-head"><div><small>00</small><h2>Валюта</h2><p>Фіксований умовний курс, без запитів до банку.</p></div><span class="tag">DEMO RATES</span></div>
+<div class="fields triple"><label>Валюта цін<select id="currency"><option value="USD">USD</option><option value="UAH">UAH</option><option value="EUR">EUR</option></select></label>
+<label>Курс до гривні<input id="rate" type="number" min=".01" max="100000" step=".1" value="42"></label>
+<label>Валюта КП<select id="currencyOut"><option value="USD">USD</option><option value="UAH">UAH</option><option value="EUR">EUR</option></select></label></div></article>
+<article class="card"><div class="card-head"><div><small>01</small><h2>Постачальник</h2></div><span class="tag">DEMO</span></div>
+<div class="fields"><label>Компанія<input id="supplier" maxlength="100" value="ТОВ «Сонячний Приклад»"></label><label>Менеджер<input id="manager" maxlength="100" value="Демо-менеджер"></label></div></article>
+<article class="card"><div class="card-head"><div><small>02</small><h2>Клієнт</h2></div></div><div class="fields">
+<label>Назва клієнта<input id="client" maxlength="100" value="ТОВ «Демо Підприємство»"></label>
+<label>Контактна особа<input id="contact" maxlength="100" value="Олена Приклад"></label>
+<label>Умовна географічна зона<select id="region"><option value="central">Центральна</option><option value="west">Західна</option><option value="south">Південна</option></select></label></div></article>
+<article class="card span"><div class="card-head"><div><small>03</small><h2>Параметри сонячної станції</h2><p>Умовні модулі та накопичувачі — не реальна номенклатура.</p></div></div>
+<div class="fields quad"><label>Сонячна панель<select id="panel"><option value="basic">Demo 500 W</option><option value="plus">Demo Plus 600 W</option></select></label>
+<label>Кількість панелей<input id="panelCount" type="number" min="1" max="10000" step="1" value="72"></label>
+<label>Річне споживання, кВт·год<input id="consumption" type="number" min="0" max="100000000" value="85000"></label>
+<label>Умовний коефіцієнт<select id="factor"><option value="0.8">0.80</option><option value="0.85">0.85</option><option value="0.9">0.90</option></select></label>
+<label>Акумулятор<select id="battery"><option value="none">Без накопичувача</option><option value="small">Demo Storage 25 кВт·год</option><option value="large">Demo Storage 50 кВт·год</option></select></label>
+<label>Кількість накопичувачів<input id="batteryCount" type="number" min="0" max="100" value="0"></label>
+<label>Тариф купівлі, UAH/кВт·год<input id="buy" type="number" min="0" max="1000" step=".1" value="7.5"></label>
+<label>Тариф продажу, UAH/кВт·год<input id="sell" type="number" min="0" max="1000" step=".1" value="3.2"></label></div></article>
+<article class="card span"><div class="card-head"><div><small>04</small><h2>Витрати й документ</h2></div></div><div class="fields quad">
+<label>Монтаж (валюта цін)<input id="labor" type="number" min="0" max="10000000" value="3500"></label>
+<label>Інші роботи (валюта цін)<input id="other" type="number" min="0" max="10000000" value="650"></label>
+<label>Дата КП<input id="date" type="date"></label>
+<label>Дизайн<select id="theme"><option value="mint">Solar Light</option><option value="navy">Deep Navy</option></select></label></div></article>
+<article class="card span result-card"><div class="card-head"><div><small>05</small><h2>Результат симуляції</h2><p>Автоматичне оновлення при зміні параметрів.</p></div><span class="tag">LIVE</span></div>
+<div class="results"><div><small>Потужність</small><strong id="power">—</strong></div><div><small>Генерація/рік</small><strong id="generation">—</strong></div><div><small>Ємність батарей</small><strong id="storage">—</strong></div><div><small>Вартість проєкту</small><strong id="cost">—</strong></div><div><small>Умовна економія/рік</small><strong id="benefit">—</strong></div><div><small>Умовна окупність</small><strong id="payback">—</strong></div></div></article>
+</div></section>
+<section id="view-settings" class="view"><article class="card"><h2>Вигаданий каталог обладнання</h2><p>Жодних реальних комерційних прайсів чи таблиць регіональної генерації.</p><div class="catalog" id="catalog"></div></article><article class="card"><h2>Налаштування симулятора</h2><div class="fields triple"><label>Умовна чинність КП (днів)<input id="validDays" type="number" min="1" max="365" value="14"></label><label>Префікс номера<input id="prefix" maxlength="12" value="DEMO"></label></div><p>Дані браузера можна скинути кнопкою зверху.</p></article></section>
+<section id="view-designs" class="view"><article class="card"><h2>HTML-дизайни</h2><p>Обидва шаблони незалежно створені для демонстрації. Виконання довільних завантажених шаблонів вимкнено.</p><div class="designs"><article><div class="swatch light"><b>Solar Light</b><small>DEMO PROPOSAL</small></div><h3>Solar Light</h3><button class="btn secondary" type="button" data-pick="mint">Обрати дизайн</button></article><article><div class="swatch dark"><b>Deep Navy</b><small>DEMO PROPOSAL</small></div><h3>Deep Navy</h3><button class="btn secondary" type="button" data-pick="navy">Обрати дизайн</button></article></div></article></section>
+<section id="view-codes" class="view"><article class="card"><h2>Приклад схеми даних</h2><p>Умовні назви полів, які описують демодокумент. Не є API робочого застосунку.</p><table><tr><th>Поле</th><th>Призначення</th></tr><tr><td><code>demo.client</code></td><td>Назва клієнта</td></tr><tr><td><code>demo.powerKw</code></td><td>Потужність</td></tr><tr><td><code>demo.annualKwh</code></td><td>Умовна генерація</td></tr><tr><td><code>demo.totalCost</code></td><td>Вартість</td></tr></table></article></section>
+<section id="view-history" class="view"><article class="card"><div class="card-head"><div><h2>Збережені пропозиції</h2><p>Дані лише у вашому браузері; імпорт і експорт JSON виконуються локально.</p></div><button id="import" class="btn secondary" type="button">↑ Відкрити чернетку з файлу</button><input id="importFile" type="file" accept=".json,application/json" hidden></div><div id="historyList"></div></article></section>
+</main></div>
+<div id="modal" class="modal" hidden><div class="dialog" role="dialog" aria-modal="true" aria-labelledby="modalLabel"><header><div><strong id="modalLabel">Демонстраційний HTML-документ</strong><small>Локальний попередній перегляд, без відправлення даних</small></div><div class="actions"><button id="download" class="btn primary" type="button">↓ Завантажити HTML</button><button id="close" class="btn secondary" type="button">Закрити ×</button></div></header><iframe id="frame" sandbox="allow-same-origin allow-modals" title="Перегляд демонстраційної пропозиції"></iframe></div></div>
+</body></html>
