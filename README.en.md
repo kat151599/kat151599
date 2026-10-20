@@ -55,6 +55,7 @@ These repositories are **portfolio case studies**, not open-source copies of an 
 | --- | --- |
 | [**Proposal Builder**](https://github.com/kat151599/CP-generator) | Structured customer data → calculations → configurable HTML proposal, drafts and history. |
 | [**Industrial Ventilation Monitoring**](https://github.com/kat151599/Industrial_Ventilation_Monitoring_Alerting_System) | Adds read-only alerts, persistent events and remote notifications to legacy equipment without changing controls. |
+| [**ClientCircuit · CRM / Call Center**](https://portfolio.solair.vip/en/projects/clientcircuit.html) | Lead/Call Center/CRM workflow with preserved interaction history; independent browser demo based on a Vikunja-derived integration project. |
 | [**ContentFlow**](https://github.com/kat151599/ContentFlow) | Working MVP bringing materials, sources and LLM-provider management into one workspace; publishing automation is planned, not claimed as complete. |
 | [**AI Development Workbench**](https://github.com/kat151599/AI_Development_Workbench) | Customized Wove workflow: LLM session ↔ terminal ↔ execution results ↔ human validation. |
 

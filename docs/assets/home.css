@@ -124,3 +124,6 @@ body.home{background:#081a1b;color:var(--ink);font-family:Inter,system-ui,-apple
 .live-demo-figure .caption{margin-top:12px;line-height:1.55}
 @media(max-width:780px){.live-demo-window{--scale:.6;--preview-height:490px}.live-demo-fake{display:none}}
 @media(max-width:520px){.live-demo-window{--scale:.48;--preview-height:385px}.case-page .wrap{width:calc(100% - 32px)}.live-demo-toolbar .button{width:100%;justify-content:center}}
+
+/* Distinct personal-project showcase: one featured project with room to grow. */
+.home .personal-card-wrap{min-width:0;max-width:100%}.home .personal-card-wrap .project-tile{max-width:520px;margin-inline:auto}.home .personal-card-wrap .project-photo{height:210px}.home .lab-layout>.wrap{min-width:0}.home .lab-layout .button.secondary{display:inline-flex;margin-top:14px;align-items:center}.home .lab-layout .project-copy p{min-height:0}@media(max-width:900px){.home .personal-card-wrap .project-tile{margin-top:16px}}@media(max-width:650px){.home .nav{justify-content:flex-start}.home .nav a{font-size:10px}}

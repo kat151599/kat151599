@@ -55,6 +55,7 @@
 | --- | --- |
 | [**Proposal Builder**](https://github.com/kat151599/CP-generator) | Дані клієнта → автоматичні розрахунки → HTML-шаблони → готова пропозиція, чернетки й історія. |
 | [**Industrial Ventilation Monitoring**](https://github.com/kat151599/Industrial_Ventilation_Monitoring_Alerting_System) | Read-only моніторинг legacy-обладнання, постійна історія аварій і віддалені сповіщення без втручання в керування. |
+| [**ClientCircuit · CRM / Call Center**](https://portfolio.solair.vip/projects/clientcircuit.html) | Інтеграція лідів, Call Center і CRM з єдиною історією; незалежне демо без робочого коду, побудовано як розширення Vikunja. |
 | [**ContentFlow**](https://github.com/kat151599/ContentFlow) | Робочий MVP для матеріалів, джерел і LLM-підключень; автоматична публікація запланована, не заявлена як готова. |
 | [**AI Development Workbench**](https://github.com/kat151599/AI_Development_Workbench) | Модифікований Wove: LLM-сесія ↔ термінал ↔ результат виконання ↔ перевірка людиною. |
 
