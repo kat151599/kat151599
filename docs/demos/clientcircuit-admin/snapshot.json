@@ -1,0 +1,204 @@
+{
+  "demo": true,
+  "version": 1,
+  "notice": "Только вымышленные данные. Демонстрация — чтение без сохранения.",
+  "teams": [
+    {
+      "id": 1,
+      "name": "Команда разработки",
+      "description": "Релизы, интеграции и тестирование"
+    },
+    {
+      "id": 2,
+      "name": "Операционная команда",
+      "description": "Процессы и распределение задач"
+    },
+    {
+      "id": 3,
+      "name": "Команда аналитики",
+      "description": "Отчёты и качество данных"
+    }
+  ],
+  "people": [
+    {
+      "id": 1,
+      "name": "Алина Волкова",
+      "handle": "alina.demo",
+      "role": "Администратор",
+      "team_id": 1,
+      "status": "active"
+    },
+    {
+      "id": 2,
+      "name": "Марк Лисов",
+      "handle": "mark.demo",
+      "role": "Разработчик",
+      "team_id": 1,
+      "status": "active"
+    },
+    {
+      "id": 3,
+      "name": "Дарья Левина",
+      "handle": "daria.demo",
+      "role": "Руководитель",
+      "team_id": 2,
+      "status": "active"
+    },
+    {
+      "id": 4,
+      "name": "Илья Белый",
+      "handle": "ilya.demo",
+      "role": "Аналитик",
+      "team_id": 3,
+      "status": "active"
+    },
+    {
+      "id": 5,
+      "name": "София Миронова",
+      "handle": "sofia.demo",
+      "role": "Наблюдатель",
+      "team_id": 2,
+      "status": "invited"
+    }
+  ],
+  "projects": [
+    {
+      "id": 101,
+      "name": "Панель мониторинга",
+      "description": "Демонстрационный проект: обзор KPI и состояния систем",
+      "owner_id": 1,
+      "team_id": 1,
+      "color": "#4682C4",
+      "progress": 68
+    },
+    {
+      "id": 102,
+      "name": "Запуск продукта",
+      "description": "Задачи и контрольные точки учебного релиза",
+      "owner_id": 3,
+      "team_id": 2,
+      "color": "#7C59D1",
+      "progress": 45
+    },
+    {
+      "id": 103,
+      "name": "Качество данных",
+      "description": "Проверки и отчётность на вымышленных данных",
+      "owner_id": 4,
+      "team_id": 3,
+      "color": "#29977B",
+      "progress": 82
+    },
+    {
+      "id": 104,
+      "name": "Клиентские сценарии",
+      "description": "Работа с запросами и обратной связью",
+      "owner_id": 3,
+      "team_id": 2,
+      "color": "#D78B33",
+      "progress": 35
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1001,
+      "project_id": 101,
+      "title": "Собрать обзорную панель",
+      "description": "Подготовить виджеты для синтетических метрик",
+      "assignee_id": 2,
+      "state": "done",
+      "priority": "high",
+      "due_date": "2026-11-03"
+    },
+    {
+      "id": 1002,
+      "project_id": 101,
+      "title": "Проверить уведомления",
+      "description": "Только тестовые события, без реальной отправки",
+      "assignee_id": 1,
+      "state": "in_progress",
+      "priority": "normal",
+      "due_date": "2026-11-07"
+    },
+    {
+      "id": 1003,
+      "project_id": 101,
+      "title": "Сверить источники данных",
+      "description": "Согласовать вымышленные сущности и поля",
+      "assignee_id": 4,
+      "state": "todo",
+      "priority": "high",
+      "due_date": "2026-11-08"
+    },
+    {
+      "id": 1004,
+      "project_id": 102,
+      "title": "Подготовить контрольный список",
+      "description": "Проверки функциональности и рисков релиза",
+      "assignee_id": 3,
+      "state": "in_progress",
+      "priority": "high",
+      "due_date": "2026-11-10"
+    },
+    {
+      "id": 1005,
+      "project_id": 102,
+      "title": "Описать пользовательские роли",
+      "description": "Синтетическая модель разрешений",
+      "assignee_id": 1,
+      "state": "todo",
+      "priority": "normal",
+      "due_date": "2026-11-13"
+    },
+    {
+      "id": 1006,
+      "project_id": 103,
+      "title": "Проверить полноту данных",
+      "description": "Контроль заполненности демонстрационных записей",
+      "assignee_id": 4,
+      "state": "done",
+      "priority": "normal",
+      "due_date": "2026-11-02"
+    },
+    {
+      "id": 1007,
+      "project_id": 103,
+      "title": "Подготовить отчёт",
+      "description": "Демонстрационные диаграммы для портфолио",
+      "assignee_id": 4,
+      "state": "done",
+      "priority": "low",
+      "due_date": "2026-11-06"
+    },
+    {
+      "id": 1008,
+      "project_id": 103,
+      "title": "Проверить правила валидации",
+      "description": "Набор негативных сценариев",
+      "assignee_id": 2,
+      "state": "in_progress",
+      "priority": "high",
+      "due_date": "2026-11-11"
+    },
+    {
+      "id": 1009,
+      "project_id": 104,
+      "title": "Составить карту сценариев",
+      "description": "Категории запросов и ответственных",
+      "assignee_id": 3,
+      "state": "todo",
+      "priority": "normal",
+      "due_date": "2026-11-12"
+    },
+    {
+      "id": 1010,
+      "project_id": 104,
+      "title": "Просмотреть макеты",
+      "description": "Проверить адаптивность интерфейса",
+      "assignee_id": 5,
+      "state": "todo",
+      "priority": "low",
+      "due_date": "2026-11-14"
+    }
+  ]
+}

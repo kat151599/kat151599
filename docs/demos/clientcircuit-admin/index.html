@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>ClientCircuit — DEMO ADMIN (вымышленные данные)</title>
+  <link rel="stylesheet" href="./style.css">
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <div class="demo-bar"><strong>DEMO • READ ONLY</strong><span>Публичная демонстрация ClientCircuit · все данные вымышлены · сохранение отключено</span></div>
+  <div class="shell">
+    <aside class="sidebar" aria-label="Разделы демонстрации">
+      <a class="brand" href="#overview"><span class="brand-mark">CC</span><span>ClientCircuit<small>ADMIN PORTFOLIO</small></span></a>
+      <div class="side-caption">НАВИГАЦИЯ</div>
+      <nav id="nav">
+        <a href="#overview" data-view="overview"><span class="nav-icon">◉</span>Обзор</a>
+        <a href="#projects" data-view="projects"><span class="nav-icon">▦</span>Проекты</a>
+        <a href="#tasks" data-view="tasks"><span class="nav-icon">☷</span>Задачи</a>
+        <a href="#users" data-view="users"><span class="nav-icon">♙</span>Пользователи</a>
+        <a href="#teams" data-view="teams"><span class="nav-icon">◈</span>Команды</a>
+      </nav>
+      <div class="side-footer"><span class="status-dot"></span> Публичная демонстрация без записи<p>Никаких реальных данных, токенов или внешних сервисов.</p></div>
+    </aside>
+    <div class="workspace">
+      <header class="topbar">
+        <div><div class="breadcrumb">ClientCircuit <span>/</span> <b id="breadcrumb">Обзор</b></div><div class="subtitle">Административная демонстрация</div></div>
+        <div class="top-actions"><span class="pill">🔒 Только чтение</span><span class="avatar" title="Вымышленная учётная запись">АВ</span></div>
+      </header>
+      <main class="main">
+        <div id="loading" class="notice">Загружаем демонстрационные данные…</div>
+        <div id="error" class="notice error" role="alert" hidden></div>
+        <div id="content" aria-live="polite" hidden></div>
+      </main>
+      <footer class="footer">Демонстрационный интерфейс портфолио · данные хранятся только в изолированной SQLite-базе · никаких операций записи из браузера</footer>
+    </div>
+  </div>
+  <dialog id="details"><form method="dialog"><button class="close" aria-label="Закрыть">✕</button></form><div id="details-body"></div></dialog>
+</body>
+</html>
