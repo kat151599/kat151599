@@ -1,7 +1,7 @@
 ClientCircuit - browser-only demo of modified Vikunja Vue frontend.
 Vikunja frontend license: AGPL-3.0-or-later; full text in LICENSE.
-Corresponding modified frontend source: Vikunja-frontend-corresponding-source-47fadb72.zip
-Source revision: 47fadb729e5de1f9ddbc50352b1a8b1c667d3cd4
+Corresponding modified frontend source: Vikunja-frontend-corresponding-source-e9d8da1c.zip
+Source revision: e9d8da1cf3d33602ae9355056272e97e8097be4d
 Call Center code adapts Open Cold Dialer; original licenses and notices apply.
 Other third-party dependencies retain their respective licenses.
 Demo data is fictional and browser-local; no real calls, mail or production APIs.
