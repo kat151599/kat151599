@@ -16,13 +16,13 @@
 
 | Блок | Цель | Состояние |
 | --- | --- | --- |
-| B1 | Оригинальный интерфейс Vikunja/Vue | Локальная сборка UNI и 10 браузерных тестов PASS на 2026-10-30 |
-| B2 | Реальные интерактивные сценарии браузерного демо | 44 unit + 10 browser PASS, не вся функциональность платформы |
-| B3 | Изоляция данных, отсутствие соединения с реальными API | Локальные проверки PASS; Caddy HTTP security gate обязателен |
-| B4 | Независимая копия DEV в `projects/vikunja` | PASS; production SERV не используется |
-| B5 | Исходники и права на публикацию | 933-file corresponding frontend source archive and AGPL notice published with user rights confirmation |
-| B6 | Публикация UA/EN страниц и Vue-демо, безопасный rollback | CC58P29B public ClientCircuit demo-only sky blue theme released via atomic index swap; original GTT/Vikunja unchanged |
-| B7 | Публичная приёмка браузера, адаптивности, UX | Cool blue palette in sidebar, buttons, cards, Call Center and splash; 44 unit and 19 browser tests PASS on UNI; final live visual acceptance pending |
+| B1 | Оригинальный интерфейс Vikunja/Vue | Original modified Vue interface built and publicly running; CC58P30A 44 unit and 23 Edge browser scenarios PASS |
+| B2 | Реальные интерактивные сценарии браузерного демо | Kanban, list, CRM and Call Center interactive browser-only scenarios PASS; disabled mailbox remains blocked |
+| B3 | Изоляция данных, отсутствие соединения с реальными API | Browser CSP no-egress and isolated fictional storage; Caddy denies four private source routes, source secret scan clean |
+| B4 | Независимая копия DEV в `projects/vikunja` | Independent UNI portfolio DEV workspace at verified P30 source commit, original DEV and SERV unchanged |
+| B5 | Исходники и права на публикацию | 935-file corresponding frontend source archive and AGPL notice published with user rights confirmation |
+| B6 | Публикация UA/EN страниц и Vue-демо, безопасный rollback | CC58P30B Vue demo banner released atomically with verified UK/EN pages and previous assets retained |
+| B7 | Публичная приёмка браузера, адаптивности, UX | VengMonitor-style demo banner visible in iframe and standalone; Home, Project and namespaced Reset; 44 unit and 23 browser tests PASS, owner visual check pending |
 
 ## Правила изменения
 1. Изменять исходники через проверенный UNI-хелпер; после проверки коммитить согласованный результат в GitHub `main` и подтверждать совпадение локальной копии.
