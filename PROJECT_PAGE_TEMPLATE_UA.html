@@ -1,0 +1,37 @@
+<!--
+УКРАЇНСЬКИЙ ШАБЛОН СТОРІНКИ ПРОЄКТУ
+CANONICAL REFERENCE: docs/projects/proposal-builder.html at GCB03 baseline.
+PLACE IN: docs/projects/{{PROJECT_SLUG}}.html. This template lives at repository ROOT, outside public docs/.
+MANDATORY: use BOTH assets/site.css + assets/home.css, body.case-page, exact shared header/nav/avatar, live-demo-figure and live-demo-window.
+EDIT ONLY: project title/meta/lead/status, category, demo label/path, article content, aside and optional related links.
+LANGUAGE PAIR: PROJECT_PAGE_TEMPLATE_EN.html. Set opposite-language link to the same new slug.
+IF NO DEMO: remove the ENTIRE live-demo-figure, do not create a fake iframe. Use a project-visual screenshot if needed.
+DO NOT embed private .env/API credentials. An app may have its OWN look inside iframe; page shell is always shared.
+Never publish this template unfilled. Validate real generated UA/EN pages against Proposal Builder BEFORE push.
+-->
+<!doctype html>
+<html lang="uk"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark"><meta name="theme-color" content="#0b171b">
+<title>{{ЗАГОЛОВОК_ПРОЄКТУ}} | Kateryna</title><meta name="description" content="{{КОРОТКИЙ_ОПИС_ДЛЯ_SEO}}">
+<link rel="stylesheet" href="../assets/site.css"><link rel="stylesheet" href="../assets/home.css"></head>
+<body class="case-page">
+<header class="site-header"><div class="wrap header-inner"><a class="brand" href="../index.html"><img src="https://avatars.githubusercontent.com/u/126671388?s=640&v=4" alt="" width="41" height="41"><span>Kateryna / Technical solutions</span></a><nav class="nav" aria-label="Navigation"><a href="../index.html#about">Про мене</a><a href="../index.html#cases">Проєкти</a><a href="../index.html#lab">Лабораторія</a><a href="../index.html#experience">Досвід</a><a href="../index.html#contact">Зв’язок</a><a class="lang" href="../en/projects/{{PROJECT_SLUG}}.html" lang="en">EN</a></nav></div></header>
+<main>
+<section class="case-hero"><div class="wrap"><a class="back" href="../index.html#cases">← Усі проєкти</a><div style="height:22px"></div><div class="eyebrow">ПРИКЛАД ВИКОНАНОЇ РОБОТИ / {{КАТЕГОРІЯ}}</div><h1>{{ЗАГОЛОВОК_ПРОЄКТУ}}</h1><p class="case-lead">{{КОРОТКИЙ_ОПИС}}</p><div class="buttons"><span class="chip">{{СТАТУС_ПРОЄКТУ}}</span><span class="chip">Portfolio case study</span></div></div></section>
+<div class="wrap">
+<figure class="project-visual live-demo-figure">
+<div class="live-demo-toolbar"><div class="live-demo-ident"><span class="live-demo-dot" aria-hidden="true"></span><strong>{{ДЕМО_НАЗВА}}</strong><span class="live-demo-fake">Демо · вигадані дані · без реальних API</span></div><a class="button primary" href="../demos/{{PROJECT_SLUG}}/">Відкрити Demo Edition ↗</a></div>
+<div class="live-demo-window"><iframe src="../demos/{{PROJECT_SLUG}}/" title="{{ДЕМО_НАЗВА}}" loading="lazy" referrerpolicy="same-origin"></iframe></div>
+<figcaption class="caption">{{ОПИС_ДЕМО_ТА_ОБМЕЖЕНЬ}}</figcaption>
+</figure>
+<div class="case-body"><article class="prose">
+<h2>Проблема</h2><p>{{ТЕКСТ_РОЗДІЛУ}}</p>
+<h2>Рішення</h2><p>{{ТЕКСТ_РОЗДІЛУ}}</p>
+<h2>Реалізовані можливості</h2><ul><li>{{ТЕКСТ_РОЗДІЛУ}}</li><li>{{ТЕКСТ_РОЗДІЛУ}}</li></ul>
+<h2>Технічний підхід</h2><p>{{ТЕКСТ_РОЗДІЛУ}}</p>
+<h2>Демонстрація та перевірка</h2><p>{{ТЕКСТ_РОЗДІЛУ}}</p>
+<h2>Обмеження й приватність</h2><p>{{ТЕКСТ_РОЗДІЛУ}}</p>
+<h2>Інші проєкти</h2><div class="other"><a href="{{RELATED_CASE_FILENAME}}.html">{{ПОСИЛАННЯ_НА_ІНШІ_ПРОЄКТИ}}</a></div>
+</article><aside class="aside"><div class="info-panel"><small>Статус</small><p><strong>{{СТАТУС_ПРОЄКТУ}}</strong></p></div></aside></div>
+</div></main>
+<footer class="site-footer"><div class="wrap footer-row"><span>© 2026 Kateryna · Портфоліо: публічні кейси. Робочий код та конфіденційні дані не опубліковані.</span><a href="https://github.com/kat151599" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div></footer>
+</body></html>

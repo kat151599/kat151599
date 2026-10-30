@@ -1,0 +1,37 @@
+<!--
+ENGLISH PROJECT PAGE TEMPLATE
+CANONICAL REFERENCE: docs/en/projects/proposal-builder.html at GCB03 baseline.
+PLACE IN: docs/en/projects/{{PROJECT_SLUG}}.html. This template lives at repository ROOT, outside public docs/.
+MANDATORY: use BOTH assets/site.css + assets/home.css, body.case-page, exact shared header/nav/avatar, live-demo-figure and live-demo-window.
+EDIT ONLY: project title/meta/lead/status, category, demo label/path, article content, aside and optional related links.
+LANGUAGE PAIR: PROJECT_PAGE_TEMPLATE_UA.html. Set opposite-language link to the same new slug.
+IF NO DEMO: remove the ENTIRE live-demo-figure, do not create a fake iframe. Use a project-visual screenshot if needed.
+DO NOT embed private .env/API credentials. An app may have its OWN look inside iframe; page shell is always shared.
+Never publish this template unfilled. Validate real generated UA/EN pages against Proposal Builder BEFORE push.
+-->
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark"><meta name="theme-color" content="#0b171b">
+<title>{{PROJECT_TITLE}} | Kateryna</title><meta name="description" content="{{SEO_DESCRIPTION}}">
+<link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/home.css"></head>
+<body class="case-page">
+<header class="site-header"><div class="wrap header-inner"><a class="brand" href="../index.html"><img src="https://avatars.githubusercontent.com/u/126671388?s=640&v=4" alt="" width="41" height="41"><span>Kateryna / Technical solutions</span></a><nav class="nav" aria-label="Navigation"><a href="../index.html#about">About</a><a href="../index.html#cases">Projects</a><a href="../index.html#lab">Idea Lab</a><a href="../index.html#experience">Experience</a><a href="../index.html#contact">Contact</a><a class="lang" href="../../projects/{{PROJECT_SLUG}}.html" lang="uk">UA</a></nav></div></header>
+<main>
+<section class="case-hero"><div class="wrap"><a class="back" href="../index.html#cases">← All projects</a><div style="height:22px"></div><div class="eyebrow">PROJECT CASE STUDY / {{CATEGORY}}</div><h1>{{PROJECT_TITLE}}</h1><p class="case-lead">{{SHORT_DESCRIPTION}}</p><div class="buttons"><span class="chip">{{PROJECT_STATUS}}</span><span class="chip">Portfolio case study</span></div></div></section>
+<div class="wrap">
+<figure class="project-visual live-demo-figure">
+<div class="live-demo-toolbar"><div class="live-demo-ident"><span class="live-demo-dot" aria-hidden="true"></span><strong>{{DEMO_NAME}}</strong><span class="live-demo-fake">Fictional demo data · no production API</span></div><a class="button primary" href="../../demos/{{PROJECT_SLUG}}/">Open Demo Edition ↗</a></div>
+<div class="live-demo-window"><iframe src="../../demos/{{PROJECT_SLUG}}/" title="{{DEMO_NAME}}" loading="lazy" referrerpolicy="same-origin"></iframe></div>
+<figcaption class="caption">{{DEMO_DESCRIPTION_AND_LIMITATIONS}}</figcaption>
+</figure>
+<div class="case-body"><article class="prose">
+<h2>The problem</h2><p>{{SECTION_BODY}}</p>
+<h2>The solution</h2><p>{{SECTION_BODY}}</p>
+<h2>Implemented features</h2><ul><li>{{SECTION_BODY}}</li><li>{{SECTION_BODY}}</li></ul>
+<h2>Technical approach</h2><p>{{SECTION_BODY}}</p>
+<h2>Demonstration & validation</h2><p>{{SECTION_BODY}}</p>
+<h2>Scope & privacy</h2><p>{{SECTION_BODY}}</p>
+<h2>Explore other projects</h2><div class="other"><a href="{{RELATED_CASE_FILENAME}}.html">{{LINKS_TO_OTHER_CASES}}</a></div>
+</article><aside class="aside"><div class="info-panel"><small>Project status</small><p><strong>{{PROJECT_STATUS}}</strong></p></div></aside></div>
+</div></main>
+<footer class="site-footer"><div class="wrap footer-row"><span>© 2026 Kateryna · Public case studies. Production source and confidential business data are not shared.</span><a href="https://github.com/kat151599" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div></footer>
+</body></html>
