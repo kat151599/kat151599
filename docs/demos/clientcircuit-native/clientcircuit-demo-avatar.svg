@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96" role="img" aria-label="Fictional demo administrator">
+<title>Demo administrator</title>
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#d2f6e5"/><stop offset="1" stop-color="#a2d9d5"/></linearGradient></defs>
+<rect width="96" height="96" rx="27" fill="url(#bg)"/>
+<circle cx="48" cy="35" r="16" fill="#377967"/>
+<path d="M17 86c1-19 15-31 31-31s30 12 31 31" fill="#245b55"/>
+<circle cx="48" cy="48" r="44" fill="none" stroke="#f4fffb" stroke-width="3" opacity=".8"/>
+</svg>

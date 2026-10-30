@@ -1,0 +1,1 @@
+import{Dt as e,P as t,pt as n,y as r}from"./vue.runtime.esm-bundler-D0Phv3yC.js";import{g as i}from"./dist-B7oe-5fu.js";t(),n();function a(t=null,n){let a=r(()=>e(t)),o=`ClientCircuit`,s=r(()=>a.value===void 0||a.value===``?o:`${a.value} | ${o}`);return i(s,n)}export{a as t};

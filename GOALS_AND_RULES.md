@@ -20,9 +20,9 @@
 | B2 | Реальные интерактивные сценарии браузерного демо | 44 unit + 10 browser PASS, не вся функциональность платформы |
 | B3 | Изоляция данных, отсутствие соединения с реальными API | Локальные проверки PASS; Caddy HTTP security gate обязателен |
 | B4 | Независимая копия DEV в `projects/vikunja` | PASS; production SERV не используется |
-| B5 | Исходники и права на публикацию | Frontend ZIP / AGPL подготовлены; права и notices требуют подтверждения |
-| B6 | Публикация UA/EN страниц и Vue-демо, безопасный rollback | CC58P24 готовит отдельный релиз с проверками, HTTPS и историей Git |
-| B7 | Публичная приёмка браузера, адаптивности, UX | После B6, не считать локальные тесты полным публичным E2E |
+| B5 | Исходники и права на публикацию | 930-file corresponding frontend source archive and AGPL notice published with user rights confirmation |
+| B6 | Публикация UA/EN страниц и Vue-демо, безопасный rollback | CC58P25D1 Vue branding release: atomic cutover, local HTTPS and Git push verification |
+| B7 | Публичная приёмка браузера, адаптивности, UX | 44 unit and 12 browser tests PASS on UNI; brand/avatar/title repaired; external visual review pending |
 
 ## Правила изменения
 1. Изменять исходники через проверенный UNI-хелпер; после проверки коммитить согласованный результат в GitHub `main` и подтверждать совпадение локальной копии.
