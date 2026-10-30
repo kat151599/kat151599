@@ -1,0 +1,1 @@
+import{t as e}from"./user-4KWg0PEB.js";import{t}from"./abstractService-C_JaZC2p.js";var n=class extends t{constructor(){super({getAll:`/users`})}modelFactory(t){return new e(t)}};export{n as t};

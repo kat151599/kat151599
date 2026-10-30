@@ -1,0 +1,8 @@
+ClientCircuit - native modified Vikunja Vue frontend demo.
+Vikunja frontend license: GNU Affero GPL v3 or later; full text in LICENSE.
+Corresponding modified frontend source: Vikunja-frontend-corresponding-source-4deae954.zip
+Source revision: 4deae954ea7669eb8a0b056bec2de1d68cda915f
+Call Center implementation is adapted from Open Cold Dialer; upstream terms remain applicable.
+Third party library notices and all copyright terms remain applicable.
+Demo data is synthetic and browser-local; no real calls, mails or production APIs.
+Release requires explicit rights-holder authorization for modified source.

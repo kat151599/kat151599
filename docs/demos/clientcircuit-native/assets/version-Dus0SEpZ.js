@@ -1,0 +1,1 @@
+var e=`v2.5.0-custom`;export{e as t};

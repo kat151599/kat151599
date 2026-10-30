@@ -1,0 +1,1 @@
+import{C as e,D as t,K as n,P as r,Q as i}from"./vue.runtime.esm-bundler-D0Phv3yC.js";import{t as a}from"./_plugin-vue_export-helper-BDNMzG2s.js";r();var o={},s={class:`personal-space`};function c(r,a){let o=i(`RouterView`);return n(),e(`div`,s,[t(o)])}var l=a(o,[[`render`,c],[`__scopeId`,`data-v-d45ca49a`]]);export{l as default};

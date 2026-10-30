@@ -1,0 +1,28 @@
+/* ClientCircuit native Vue case: follows the established VengMonitor project layout. */
+.cc-native .cc-hero{background:radial-gradient(circle at 85% 25%,#255e4e73,transparent 43%),linear-gradient(120deg,#10292b,#10232a);border-bottom:1px solid #356d60}
+.cc-native .cc-hero .eyebrow,.cc-native .cc-hero-mark span{color:#91eac0}
+.cc-native .cc-hero .chip{background:#15352f;border-color:#498471;color:#cff4df}
+.cc-native .cc-hero h1{color:#edfff5}
+.cc-native .cc-hero .case-lead{color:#bad8cd}
+.cc-native .cc-demo-figure{background:#102d2c;border-color:#457a69;box-shadow:0 18px 40px #0003}
+.cc-native .cc-demo-figure .live-demo-dot{background:#90f1bb;box-shadow:0 0 0 4px #90f1bb26}
+.cc-native .cc-demo-figure .live-demo-window{background:#eef7f4;border:1px solid #7fa798;--scale:.76;--preview-height:700px}
+.cc-native .cc-demo-figure .live-demo-window iframe{background:#fff}
+.cc-native .cc-demo-figure .button.primary,.cc-native .cc-aside .button.primary{background:#a2f3cb;border-color:#a2f3cb;color:#082d22}
+.cc-native .cc-architecture{margin:35px 0 46px;border:1px solid #4b8274;border-radius:23px;background:linear-gradient(145deg,#112f30,#102329);box-shadow:0 15px 45px #0004;padding:clamp(20px,3vw,34px)}
+.cc-native .cc-architecture h2{font-size:clamp(25px,3vw,35px);line-height:1.2;letter-spacing:-.04em;color:#e8f8f0}
+.cc-native .cc-architecture>p{color:#b9d8cd;line-height:1.7}
+.cc-native .cc-flow article{background:#173a36;border:1px solid #497667;border-radius:15px;min-height:190px}
+.cc-native .cc-flow small{color:#8cddae}
+.cc-native .cc-flow strong{color:#e8f8f0}
+.cc-native .cc-flow p,.cc-native .cc-why p{color:#b9d5cc}
+.cc-native .cc-flow article:not(:last-child):after{color:#91e8b6}
+.cc-native .cc-why article{border-left:3px solid #92eac4;background:#0d2a2a;border-radius:0 11px 11px 0}
+.cc-native .cc-limit{color:#d9e8c6!important;border:1px dashed #609985}
+.cc-native .cc-aside .info-panel{border-color:#37685a;background:#112b29}
+.cc-native .cc-aside .info-panel small{color:#a2e6bb}
+.cc-native .cc-aside .info-panel p{color:#e4f7eb}
+.cc-native .caption a,.cc-native .prose a{color:#b0f2c8}
+.cc-native .cc-native-preview{isolation:isolate}
+@media(max-width:780px){.cc-native .cc-demo-figure .live-demo-window{--scale:.59;--preview-height:520px}}
+@media(max-width:550px){.cc-native .cc-demo-figure .live-demo-window{--scale:.47;--preview-height:390px}.cc-native .cc-flow article{min-height:0}}

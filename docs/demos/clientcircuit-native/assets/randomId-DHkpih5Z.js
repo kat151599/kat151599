@@ -1,0 +1,1 @@
+function e(e=9){return Math.random().toString(36).slice(2,e)}export{e as t};
