@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="uk"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'none'; connect-src 'none'; frame-src 'none'; worker-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<title>ContentFlow / GTT Content Studio · DEMO</title><meta name="description" content="Безпечна інтерактивна демонстрація GTT Content Studio з вигаданими даними">
+<link rel="stylesheet" href="./demo.css"><script src="./demo.js" defer></script></head>
+<body>
+<div class="demo-banner"><span class="demo-label">✦ CONTENTFLOW · DEMO EDITION · ВИГАДАНІ ДАНІ · БЕЗ ЗОВНІШНІХ API</span><div class="banner-links"><a href="../../index.html" target="_top">⌂ Додому</a><a href="../../projects/contentflow.html" target="_top">Про проєкт ↗</a><button type="button" id="demo-reset">Скинути демо ↻</button></div></div>
+<div class="app-shell">
+<aside class="sidebar">
+<a class="brand" href="#/"><span class="brand-symbol"><span>✦</span></span><span><strong>GTT Content</strong><small>Content publishing hub · demo</small></span></a>
+<nav class="main-nav" aria-label="Розділи">
+<div class="nav-caption">Робочий простір</div>
+<a href="#/" data-nav="dashboard"><i>⌂</i><span>Огляд</span></a>
+<a href="#/materials" data-nav="materials"><i>◉</i><span>Матеріали</span></a>
+<a href="#/sources" data-nav="sources"><i>⌁</i><span>Джерела</span></a>
+<a href="#/publications" data-nav="publications"><i>↑</i><span>Публікації</span></a>
+<div class="nav-caption">Підключення</div>
+<a href="#/ai" data-nav="ai"><i>✦</i><span>AI</span></a>
+<a href="#/destinations" data-nav="destinations"><i>↗</i><span>Центр вивантаження</span></a>
+</nav><div class="sidebar-card"><span class="live-pulse"></span><span><strong>Демо працює</strong><small>Тільки цей браузер · offline</small></span></div>
+</aside>
+<main class="workspace"><div id="app" aria-live="polite"></div><footer class="demo-footer">ContentFlow · безпечна браузерна демонстрація. Жодні дані не надсилаються на сервер.</footer></main>
+</div>
+<div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+</body></html>
