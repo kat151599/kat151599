@@ -1,58 +1,58 @@
 <!doctype html>
-<html lang="en">
+<html lang="uk">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="color-scheme" content="dark"><meta name="theme-color" content="#0b171b">
-<title>ClientCircuit — Vikunja CRM &amp; Call Center | Kateryna</title>
-<meta name="description" content="A real modified Vikunja Vue client for CRM, leads, calls and client timelines. Interactive browser-only demo with fictional data.">
-<link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/home.css"><link rel="stylesheet" href="../../assets/clientcircuit-case.css"><link rel="stylesheet" href="../../assets/clientcircuit-native.css">
+<title>ClientCircuit — CRM / Call Center на базі Vikunja | Kateryna</title>
+<meta name="description" content="ClientCircuit: розширення Vikunja для CRM, лідів, дзвінків і клієнтської історії. Справжній Vue-інтерфейс у браузерному демо з вигаданими даними.">
+<link rel="stylesheet" href="../assets/site.css"><link rel="stylesheet" href="../assets/home.css"><link rel="stylesheet" href="../assets/clientcircuit-case.css"><link rel="stylesheet" href="../assets/clientcircuit-native.css">
 </head>
 <body class="case-page cc-case cc-native">
 <header class="site-header"><div class="wrap header-inner">
 <a class="brand" href="../index.html"><img src="https://avatars.githubusercontent.com/u/126671388?s=640&amp;v=4" alt="" width="41" height="41"><span>Kateryna / Technical solutions</span></a>
-<nav class="nav" aria-label="Navigation"><a href="../index.html#about">About</a><a href="../index.html#cases">Projects</a><a href="../index.html#lab">Idea Lab</a><a href="../index.html#experience">Experience</a><a href="../index.html#contact">Contact</a><a class="lang" href="../../projects/clientcircuit.html" lang="uk">UA</a></nav>
+<nav class="nav" aria-label="Навігація"><a href="../index.html#about">Про мене</a><a href="../index.html#cases">Проєкти</a><a href="../index.html#lab">Лабораторія</a><a href="../index.html#experience">Досвід</a><a href="../index.html#contact">Зв’язок</a><a class="lang" href="../en/projects/clientcircuit.html" lang="en">EN</a></nav>
 </div></header>
 <main>
 <section class="case-hero cc-hero"><div class="wrap">
-<a class="back" href="../index.html#cases">← All projects</a><div class="cc-hero-mark"><img src="../../demos/clientcircuit/logo.svg" alt="" width="62" height="62"><span>CLIENTCIRCUIT / CRM · VIKUNJA</span></div>
-<div class="eyebrow">PROJECT CASE STUDY / CRM &amp; INTEGRATIONS</div>
-<h1>ClientCircuit — from first inquiry to client project</h1>
-<p class="case-lead">An extension of the real Vikunja platform, bringing leads, contacts, tasks, calls and a continuous client timeline together in one workspace.</p>
-<div class="buttons"><span class="chip">Vikunja · Go + Vue</span><span class="chip">Interactive demo</span><span class="chip">No production data</span></div>
+<a class="back" href="../index.html#cases">← Усі проєкти</a><div class="cc-hero-mark"><img src="../demos/clientcircuit/logo.svg" alt="" width="62" height="62"><span>CLIENTCIRCUIT / CRM · VIKUNJA</span></div>
+<div class="eyebrow">ПРИКЛАД ВИКОНАНОЇ РОБОТИ / CRM ТА ІНТЕГРАЦІЇ</div>
+<h1>ClientCircuit — від звернення до клієнтського проєкту</h1>
+<p class="case-lead">Модифікація справжньої платформи Vikunja: вхідні ліди, контакти, задачі, дзвінки й безперервна історія клієнта в одному робочому просторі.</p>
+<div class="buttons"><span class="chip">Vikunja · Go + Vue</span><span class="chip">Інтерактивний деморежим</span><span class="chip">Без production-даних</span></div>
 </div></section>
 <div class="wrap">
 <figure class="project-visual live-demo-figure cc-demo-figure">
-<div class="live-demo-toolbar"><div class="live-demo-ident"><span class="live-demo-dot" aria-hidden="true"></span><strong>ClientCircuit · authentic Vue interface</strong><span class="live-demo-fake">Fictional clients and tasks · no external APIs</span></div>
-<a class="button primary" href="../../demos/clientcircuit-native/" target="_blank" rel="noopener noreferrer">Open full-screen demo ↗</a></div>
-<div class="live-demo-window cc-native-preview"><iframe src="../../demos/clientcircuit-native/" title="ClientCircuit — interactive demo of the actual Vikunja interface" loading="lazy" referrerpolicy="same-origin"></iframe></div>
-<figcaption class="caption">This is a modified version of the original Vikunja Vue client, not a screenshot or imitation. Create tasks, use List and Kanban, explore CRM and Call Center. Changes stay in this browser's local storage; no real emails or calls are made. <a href="../../demos/clientcircuit-admin/">Previous static demo ↗</a></figcaption>
+<div class="live-demo-toolbar"><div class="live-demo-ident"><span class="live-demo-dot" aria-hidden="true"></span><strong>ClientCircuit · справжній Vue-інтерфейс</strong><span class="live-demo-fake">Вигадані клієнти та задачі · без зовнішніх API</span></div>
+<a class="button primary" href="../demos/clientcircuit-native/" target="_blank" rel="noopener noreferrer">Відкрити демо на весь екран ↗</a></div>
+<div class="live-demo-window cc-native-preview"><iframe src="../demos/clientcircuit-native/" title="ClientCircuit — інтерактивне демо справжнього інтерфейсу Vikunja" loading="lazy" referrerpolicy="same-origin"></iframe></div>
+<figcaption class="caption">Це модифікований оригінальний Vue-клієнт Vikunja, а не скріншот і не макет панелі. Створюйте задачі, працюйте зі списком і Kanban, переглядайте CRM та Call Center. Зміни залишаються в локальному сховищі цього браузера; реальні листи й дзвінки не надсилаються. <a href="../demos/clientcircuit-admin/">Попередній статичний стенд ↗</a></figcaption>
 </figure>
 <section class="cc-architecture" aria-labelledby="cc-arch-title">
-<span class="eyebrow">ARCHITECTURE / DATA PROVENANCE</span>
-<h2 id="cc-arch-title">How does an inquiry become a client project?</h2>
-<p>One continuous history replaces disconnected lists. Each stage retains lead provenance and earlier contact context.</p>
+<span class="eyebrow">АРХІТЕКТУРА / ПОХОДЖЕННЯ ДАНИХ</span>
+<h2 id="cc-arch-title">Як звернення стає клієнтським проєктом?</h2>
+<p>Замість розірваних журналів — одна послідовна історія. Кожен етап зберігає походження заявки й контекст контакту.</p>
 <div class="cc-flow">
-<article><small>01 · Intake</small><strong>Lead &amp; source</strong><p>Business provenance remains distinct from the technical intake method.</p></article>
-<article><small>02 · Contact</small><strong>Call Center</strong><p>Contact events, ownership, statuses and call history.</p></article>
-<article><small>03 · Workspace</small><strong>CRM + tasks</strong><p>Client profiles, projects, Kanban and task progress.</p></article>
-<article><small>04 · Continuity</small><strong>Client timeline</strong><p>Prior interactions remain visible after conversion.</p></article>
+<article><small>01 · Вхідні дані</small><strong>Лід і джерело</strong><p>Бізнес-джерело відділене від технічного способу надходження.</p></article>
+<article><small>02 · Комунікація</small><strong>Call Center</strong><p>Контакт, відповідальний, статус і журнал подій.</p></article>
+<article><small>03 · Система</small><strong>CRM + задачі</strong><p>Клієнтські профілі, проєкти, Kanban, контроль виконання.</p></article>
+<article><small>04 · Результат</small><strong>Історія клієнта</strong><p>Попередні контакти не губляться під час конвертації.</p></article>
 </div>
 <div class="cc-why">
-<article><b>Traceable provenance</b><p>Know where the lead originated and how the system received it.</p></article>
-<article><b>Retry safety</b><p>Repeated delivery of the same event should not create duplicates.</p></article>
-<article><b>Isolated browser demo</b><p>The public edition uses fictional browser-local data and no operational database.</p></article>
+<article><b>Відстежуване походження</b><p>Відомо, звідки прийшов клієнт і як запис потрапив у систему.</p></article>
+<article><b>Захист від дублів</b><p>Повторна доставка тієї самої події не має створювати дублікати.</p></article>
+<article><b>Відокремлене демо</b><p>Публічна версія працює з вигаданими записами в браузері, без робочої бази.</p></article>
 </div>
-<p class="cc-limit">The demo makes no real calls, sends no emails and submits no operational leads. External website-form intake is simulated here, not claimed as a completed production integration.</p>
+<p class="cc-limit">Демонстраційні дії не створюють справжніх дзвінків, листів чи заявок. Зовнішнє підключення вебформи тут змодельоване, а не заявлене як завершена production-інтеграція.</p>
 </section>
 <div class="case-body"><article class="prose">
-<h2>The problem</h2><p>Leads, calls, tasks and contact history often live in disconnected parts of the workflow. Moving from an inquiry to a client project risks losing context and attribution.</p>
-<h2>The solution</h2><p>Extend open-source Vikunja with CRM entities and an integrated Call Center while retaining its established project and task management interface.</p>
-<h2>Implemented features</h2><ul><li>CRM profiles, contact people, ownership, statuses and configurable fields.</li><li>Client timeline with notes, calls, meetings and task changes.</li><li>Call Center leads, sources, contact logs and status updates.</li><li>Task lists, Kanban and interactive browser-demo flows.</li></ul>
-<h2>Technical approach</h2><p>Vikunja (Go / Vue / TypeScript) · API contracts · Git · automated testing. ClientCircuit is a modification and integration of Vikunja, not a claim to have authored the task-management platform from scratch.</p>
-<h2>Demo &amp; validation</h2><p>The public edition uses the authentic Vue interface with a local data adapter. Visitors enter as a fictional demo administrator; records stay browser-local. Unit and browser checks cover task creation, persistence across reloads and sampled CRM/Call Center interactions.</p>
-<h2>Source, licenses &amp; privacy</h2><p>Based on open-source Vikunja; the Call Center component draws on Open Cold Dialer. Original component licenses continue to apply. <a href="../../demos/clientcircuit-native/SOURCE-AND-LICENSES.txt">Licensing notice</a> · <a href="../../demos/clientcircuit-native/Vikunja-frontend-corresponding-source-693f1ff0.zip">Corresponding Vue demo source</a>. No operational customer database, server credentials or service configuration is included.</p>
-<h2>Explore other projects</h2><div class="other"><a href="industrial-monitoring.html">VengMonitor ↗</a><a href="proposal-builder.html">Proposal Builder ↗</a><a href="contentflow.html">ContentFlow ↗</a></div>
-</article><aside class="aside cc-aside"><div class="info-panel"><small>Format</small><p><strong>Real modified Vikunja</strong></p></div><div class="info-panel"><small>Demo data</small><p>Fictional only. Changes stay in the visitor's browser.</p><a class="button primary" href="../../demos/clientcircuit-native/" target="_blank" rel="noopener noreferrer">Open demo ↗</a></div></aside></div>
+<h2>Проблема</h2><p>Заявки, дзвінки, задачі та історія контактів існують у різних частинах процесу. Під час переходу від ліда до клієнтського проєкту губляться контекст і джерело звернення.</p>
+<h2>Рішення</h2><p>Розширити відкриту платформу Vikunja CRM-сутностями та інтегрованим Call Center, залишивши звичні інструменти керування проєктами й задачами.</p>
+<h2>Що реалізовано</h2><ul><li>CRM-профілі, контакти, відповідальні, статуси та користувацькі поля.</li><li>Історія подій: нотатки, дзвінки, зустрічі й зміни задач.</li><li>Call Center: ліди, джерела, записи контактів і зміни статусів.</li><li>Списки задач, Kanban та інтерактивні сценарії у браузерній демоверсії.</li></ul>
+<h2>Технічний підхід</h2><p>Vikunja (Go / Vue / TypeScript) · API-контракти · Git · автоматизоване тестування. ClientCircuit є модифікацією Vikunja та інтеграційною роботою, а не повністю самостійно створеним task manager.</p>
+<h2>Демонстрація та перевірка</h2><p>Публічна версія використовує оригінальний Vue-інтерфейс із локальним адаптером даних. Відвідувач входить як вигаданий демоадміністратор; дані ізольовані у браузері. Перед випуском проведено модульні та браузерні тести, зокрема створення задач і збереження після перезавантаження.</p>
+<h2>Походження коду, ліцензії та приватність</h2><p>В основі — проєкт Vikunja з відкритим кодом; компонент Call Center адаптовано з Open Cold Dialer. Ліцензії вихідних компонентів зберігають чинність. <a href="../demos/clientcircuit-native/SOURCE-AND-LICENSES.txt">Ліцензійна інформація</a> · <a href="../demos/clientcircuit-native/Vikunja-frontend-corresponding-source-47fadb72.zip">Відповідні вихідні тексти Vue-демо</a>. Демо не містить робочої бази клієнтів, токенів або конфігурацій серверів.</p>
+<h2>Інші проєкти</h2><div class="other"><a href="industrial-monitoring.html">VengMonitor ↗</a><a href="proposal-builder.html">Генератор КП ↗</a><a href="contentflow.html">ContentFlow ↗</a></div>
+</article><aside class="aside cc-aside"><div class="info-panel"><small>Формат</small><p><strong>Реальна модифікована Vikunja</strong></p></div><div class="info-panel"><small>Дані демоверсії</small><p>Лише вигадані. Збереження — у браузері відвідувача.</p><a class="button primary" href="../demos/clientcircuit-native/" target="_blank" rel="noopener noreferrer">Відкрити демо ↗</a></div></aside></div>
 </div></main>
-<footer class="site-footer"><div class="wrap footer-row"><span>© 2026 Kateryna · Public demos contain no operational data or accounts.</span><a href="https://github.com/kat151599" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div></footer>
+<footer class="site-footer"><div class="wrap footer-row"><span>© 2026 Kateryna · Публічне демо без робочих даних та облікових записів.</span><a href="https://github.com/kat151599" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div></footer>
 </body></html>

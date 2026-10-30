@@ -20,9 +20,9 @@
 | B2 | Реальные интерактивные сценарии браузерного демо | 44 unit + 10 browser PASS, не вся функциональность платформы |
 | B3 | Изоляция данных, отсутствие соединения с реальными API | Локальные проверки PASS; Caddy HTTP security gate обязателен |
 | B4 | Независимая копия DEV в `projects/vikunja` | PASS; production SERV не используется |
-| B5 | Исходники и права на публикацию | 930-file corresponding frontend source archive and AGPL notice published with user rights confirmation |
-| B6 | Публикация UA/EN страниц и Vue-демо, безопасный rollback | CC58P26B redesigned boot splash release: atomic cutover, local HTTPS and Git push verification |
-| B7 | Публичная приёмка браузера, адаптивности, UX | Original llama loader replaced by localized ClientCircuit splash; 44 unit and 12 browser regressions PASS on UNI; live visual review pending |
+| B5 | Исходники и права на публикацию | 931-file corresponding frontend source archive and AGPL notice published with user rights confirmation |
+| B6 | Публикация UA/EN страниц и Vue-демо, безопасный rollback | CC58P28B public demo UI: mailbox/about/account settings hidden, logout disabled, dialer above header; atomic site release |
+| B7 | Публичная приёмка браузера, адаптивности, UX | Demo menu cleaned, logout disabled, dialer above header; 16 browser tests PASS; Ukrainian case restored; live review pending |
 
 ## Правила изменения
 1. Изменять исходники через проверенный UNI-хелпер; после проверки коммитить согласованный результат в GitHub `main` и подтверждать совпадение локальной копии.
