@@ -17,3 +17,17 @@
 @media(max-width:760px){.cc-native .cc-mobile-spotlight{grid-template-columns:1fr;gap:28px;padding:24px 18px}.cc-native .cc-mobile-phone-link{max-width:288px;transform:rotate(0)}.cc-native .cc-mobile-spotlight p{font-size:14px}}
 @media(max-width:480px){.cc-native .cc-mobile-spotlight{margin:24px 0 32px}.cc-native .cc-mobile-spotlight h2{font-size:30px}.cc-native .cc-mobile-phone-link .cc-mobile-device-label{right:-1px}}
 @media(prefers-reduced-motion:reduce){.cc-native .cc-mobile-phone-link{transition:none}}
+
+/* CCM02: half-size phone and corrected camera/chin alignment.
+   Phone screen is a BLOCK; inline <span> cannot supply a reliable positioning box. */
+@media(min-width:761px){.cc-native .cc-mobile-spotlight{grid-template-columns:minmax(0,1fr) minmax(176px,205px)}}
+.cc-native .cc-mobile-phone-link{width:min(100%,160px);padding:6px;border-radius:25px;transform:none;box-shadow:0 23px 45px #0009,0 0 0 1px #a8d8ce55}
+.cc-native .cc-mobile-phone-link:hover,.cc-native .cc-mobile-phone-link:focus-visible{transform:translateY(-3px);box-shadow:0 25px 47px #000a,0 0 0 2px #8dfff0}
+.cc-native .cc-mobile-phone-screen{display:block;box-sizing:border-box;width:100%;aspect-ratio:390/844;border-radius:19px;border-width:1px}
+.cc-native .cc-mobile-phone-screen img{width:100%;height:100%;object-fit:cover;object-position:top center}
+.cc-native .cc-mobile-phone-camera{top:5px;left:50%;width:44px;height:9px;transform:translateX(-50%)}
+.cc-native .cc-mobile-phone-camera:after{right:7px;top:3px;width:3px;height:3px}
+.cc-native .cc-mobile-phone-chin{bottom:5px;left:50%;width:46px;height:3px;transform:translateX(-50%)}
+.cc-native .cc-mobile-phone-link .cc-mobile-device-label{right:-5px;bottom:15px;border-radius:6px;padding:5px 7px;font-size:9px;transform:none}
+@media(max-width:760px){.cc-native .cc-mobile-phone-link{transform:rotate(0)}.cc-native .cc-mobile-phone-link .cc-mobile-device-label{transform:rotate(0)}}
+@media(prefers-reduced-motion:reduce){.cc-native .cc-mobile-phone-link{transition:none}}
