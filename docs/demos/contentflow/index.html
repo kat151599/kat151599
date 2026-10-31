@@ -1,25 +1,50 @@
 <!doctype html>
-<html lang="uk"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light">
+<html lang="uk">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark"><meta name="theme-color" content="#0a0713">
+<meta name="description" content="ContentFlow: інтерактивна демонстрація редакційного конвеєра із вигаданими даними.">
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'none'; connect-src 'none'; frame-src 'none'; worker-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
-<title>ContentFlow / GTT Content Studio · DEMO</title><meta name="description" content="Безпечна інтерактивна демонстрація GTT Content Studio з вигаданими даними">
-<link rel="stylesheet" href="./demo.css"><script src="./demo.js" defer></script></head>
-<body>
-<div class="demo-banner"><span class="demo-label">✦ CONTENTFLOW · DEMO EDITION · ВИГАДАНІ ДАНІ · БЕЗ ЗОВНІШНІХ API</span><div class="banner-links"><a href="../../index.html" target="_top">⌂ Додому</a><a href="../../projects/contentflow.html" target="_top">Про проєкт ↗</a><button type="button" id="demo-reset">Скинути демо ↻</button></div></div>
+<title>ContentFlow · Orbital Editorial Workspace · Demo</title>
+<link rel="stylesheet" href="./demo.css?v=cf-orbital-01">
+<script defer src="./demo.js"></script><script defer src="./orbital.js?v=cf-orbital-01"></script>
+</head>
+<body class="cf-orbital">
+<div class="demo-banner"><span class="demo-label"><span class="orbit-live" aria-hidden="true"></span> CONTENTFLOW <span class="demo-label-secondary">/ DEMO EDITION · ВИГАДАНІ ДАНІ · OFFLINE</span></span>
+<div class="banner-links"><a href="../../index.html" target="_top">⌂ Портфоліо</a><a href="../../projects/contentflow.html" target="_top">Про проєкт ↗</a><button type="button" id="demo-reset">Скинути демо ↻</button></div></div>
 <div class="app-shell">
-<aside class="sidebar">
-<a class="brand" href="#/"><span class="brand-symbol"><span>✦</span></span><span><strong>GTT Content</strong><small>Content publishing hub · demo</small></span></a>
+<header class="sidebar" aria-label="Навігація ContentFlow">
+<a class="brand" href="#/" aria-label="ContentFlow — головна"><span class="brand-symbol">✦</span><span><strong>ContentFlow</strong><small>GTT Content Studio / demo</small></span></a>
 <nav class="main-nav" aria-label="Розділи">
-<div class="nav-caption">Робочий простір</div>
-<a href="#/" data-nav="dashboard"><i>⌂</i><span>Огляд</span></a>
-<a href="#/materials" data-nav="materials"><i>◉</i><span>Матеріали</span></a>
-<a href="#/sources" data-nav="sources"><i>⌁</i><span>Джерела</span></a>
-<a href="#/publications" data-nav="publications"><i>↑</i><span>Публікації</span></a>
-<div class="nav-caption">Підключення</div>
-<a href="#/ai" data-nav="ai"><i>✦</i><span>AI</span></a>
-<a href="#/destinations" data-nav="destinations"><i>↗</i><span>Центр вивантаження</span></a>
-</nav><div class="sidebar-card"><span class="live-pulse"></span><span><strong>Демо працює</strong><small>Тільки цей браузер · offline</small></span></div>
-</aside>
-<main class="workspace"><div id="app" aria-live="polite"></div><footer class="demo-footer">ContentFlow · безпечна браузерна демонстрація. Жодні дані не надсилаються на сервер.</footer></main>
+<a href="#/" data-nav="dashboard"><i aria-hidden="true">◈</i><span>Орбіта</span></a>
+<a href="#/materials" data-nav="materials"><i aria-hidden="true">◉</i><span>Матеріали</span></a>
+<a href="#/sources" data-nav="sources"><i aria-hidden="true">⌁</i><span>Джерела</span></a>
+<a href="#/publications" data-nav="publications"><i aria-hidden="true">↑</i><span>Публікації</span></a>
+<a href="#/ai" data-nav="ai"><i aria-hidden="true">✦</i><span>AI</span></a>
+<a href="#/destinations" data-nav="destinations"><i aria-hidden="true">↗</i><span>Канали</span></a>
+</nav>
+<div class="sidebar-card"><span class="live-pulse" aria-hidden="true"></span><span><strong>SAFE SIMULATION</strong><small>Без реальних API</small></span></div>
+</header>
+<main class="workspace" id="main">
+<section class="orbital-showcase" id="orbitalShowcase" aria-labelledby="orbitalTitle">
+<div class="orbit-stars" aria-hidden="true"></div><div class="orbit-nebula" aria-hidden="true"></div>
+<div class="orbital-hero-copy"><span class="orbital-kicker">CONTENT PIPELINE / INTERACTIVE SPACE</span><h1 id="orbitalTitle">Усі ідеї.<br><em>На своїй орбіті.</em></h1><p>Від джерела до погодженої публікації. Обери напрям — відкриється справжній розділ демоверсії.</p></div>
+<div class="orbit-stage" id="orbitStage" tabindex="0" role="region" aria-label="Інтерактивна орбіта шести напрямів ContentFlow. Стрілки вліво і вправо обертають.">
+<div class="orbit-ring" id="orbitRing">
+<a class="orbit-panel panel-materials" href="#/materials" style="--i:0" data-orbit="0"><span class="panel-index">01 / CONTENT</span><span class="panel-mark">✍</span><strong>Матеріали</strong><small>Ідеї, чернетки, редактура</small><span class="panel-link">Відкрити ↗</span></a>
+<a class="orbit-panel panel-sources" href="#/sources" style="--i:1" data-orbit="1"><span class="panel-index">02 / SIGNAL</span><span class="panel-mark">◎</span><strong>Джерела</strong><small>Потоки й походження даних</small><span class="panel-link">Відкрити ↗</span></a>
+<a class="orbit-panel panel-ai" href="#/ai" style="--i:2" data-orbit="2"><span class="panel-index">03 / SYNTHESIS</span><span class="panel-mark">✦</span><strong>AI-студія</strong><small>Безпечна симуляція</small><span class="panel-link">Відкрити ↗</span></a>
+<a class="orbit-panel panel-publish" href="#/publications" style="--i:3" data-orbit="3"><span class="panel-index">04 / OUTPUT</span><span class="panel-mark">↗</span><strong>Публікації</strong><small>Черга, результати, журнал</small><span class="panel-link">Відкрити ↗</span></a>
+<a class="orbit-panel panel-dest" href="#/destinations" style="--i:4" data-orbit="4"><span class="panel-index">05 / ROUTING</span><span class="panel-mark">⌘</span><strong>Канали</strong><small>Сайт та соціальні мережі</small><span class="panel-link">Відкрити ↗</span></a>
+<a class="orbit-panel panel-new" href="#/new" style="--i:5" data-orbit="5"><span class="panel-index">06 / CREATE</span><span class="panel-mark">＋</span><strong>Нова ідея</strong><small>Створити чернетку</small><span class="panel-link">Створити ↗</span></a>
 </div>
-<div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+<div class="orbit-center" aria-hidden="true"><span>✦</span><strong>CONTENT<br>FLOW</strong></div>
+</div>
+<div class="orbit-bottom"><div class="orbit-hint"><span class="orbit-hint-line" aria-hidden="true"></span> ПЕРЕТЯГНИ · ГОРТАЙ · ВИБИРАЙ</div>
+<div class="orbit-controls"><button type="button" id="orbitPrev" aria-label="Повернути орбіту вліво">←</button><span id="orbitCounter" aria-live="polite">01 / 06</span><button type="button" id="orbitNext" aria-label="Повернути орбіту вправо">→</button><button type="button" id="orbitGlass" aria-pressed="true" title="Перемкнути прозорість">GLASS: ON</button></div></div>
+</section>
+<div class="orbital-work-label"><span>EDITORIAL WORKSPACE</span><span>LOCAL STATE / REAL INTERACTION</span></div>
+<div id="app" aria-live="polite"></div>
+<footer class="demo-footer">ContentFlow / GTT Content Studio · офлайн-симуляція. Дані залишаються тільки в цьому браузері. <a href="https://www.tooplate.com/view/2167-orbital" target="_blank" rel="noopener noreferrer">Дизайн натхненний Orbital — Tooplate</a>.</footer>
+</main></div><div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
 </body></html>

@@ -28,3 +28,98 @@
   .material-card,.material-body{min-width:0}
   .material-body h2,.material-body p{overflow-wrap:anywhere}
 }
+
+
+
+/* CFO01 / ORBITAL - a ContentFlow adaptation of Tooplate Orbital (2167).
+   3D carousel technique and design motif inspired by the free HTML template:
+   https://www.tooplate.com/view/2167-orbital
+   This CSS is original implementation. No template image, font or script bundled.
+   All existing content editing, publishing simulation, API isolation remain in demo.js.
+ */
+:root{color-scheme:dark;--bg:#070811;--surface:#121426;--ink:#ecedf9;--muted:#abb2d2;--line:#35354e;--green:#9e8eff;--lime:#88f6df}
+html{scroll-behavior:smooth}body.cf-orbital{background:radial-gradient(ellipse 58% 24% at 52% 13%,#3a1b56 0%,transparent 72%),radial-gradient(ellipse 45% 30% at 12% 28%,#0e3248 0%,transparent 78%),#070811;color:#ebefff;font:14px/1.5 system-ui,-apple-system,"Segoe UI",Arial,sans-serif;overflow-x:hidden}
+.cf-orbital :is(a,button,input,select,textarea):focus-visible,.orbit-stage:focus-visible{outline:2px solid #80fff1;outline-offset:3px}
+.cf-orbital .demo-banner{background:#070710ef;border-bottom:1px solid #2d2b4b;min-height:48px;padding:8px clamp(16px,3vw,56px);font-size:10px;letter-spacing:.12em}
+.cf-orbital .demo-label{display:flex;align-items:center;gap:9px;color:#eeecff}.cf-orbital .demo-label-secondary{color:#8986af;font-size:10px;letter-spacing:.07em}
+.cf-orbital .orbit-live{width:8px;height:8px;border-radius:50%;background:#88f6df;box-shadow:0 0 15px #70ffdb}
+.cf-orbital .banner-links a,.cf-orbital .banner-links button{border:1px solid #43415f;background:#14162b;color:#e5e8fa;border-radius:6px;font-size:10px;letter-spacing:0}
+.cf-orbital .banner-links a:hover,.cf-orbital .banner-links button:hover{border-color:#96a0fa;color:#fff;background:#262444}
+.cf-orbital .app-shell{display:block;min-width:0}
+.cf-orbital .sidebar{min-height:0;padding:13px clamp(18px,3.5vw,57px);display:flex;flex-direction:row;gap:22px;align-items:center;justify-content:space-between;position:relative;background:#0a0b19d9;border-bottom:1px solid #272b45}
+.cf-orbital .brand{display:flex;align-items:center;gap:11px;padding:0;white-space:nowrap}
+.cf-orbital .brand-symbol{width:35px;height:35px;border:1px solid #95cdec80;border-radius:9px;background:linear-gradient(145deg,#2f2455,#0a2630);color:#aeffed;box-shadow:0 0 25px #526fbd38;font-size:20px}
+.cf-orbital .brand strong{font-size:17px;letter-spacing:.02em;color:#e6eafd}.cf-orbital .brand small{font-size:10px;color:#888cac;letter-spacing:.04em}
+.cf-orbital .main-nav{display:flex;align-items:center;justify-content:center;flex-direction:row;flex-wrap:wrap;gap:3px;margin-left:auto}
+.cf-orbital .nav-caption{display:none}.cf-orbital .main-nav a{padding:9px 12px;white-space:nowrap;color:#b7b7d4;font-size:11px;font-weight:750;border:1px solid transparent;border-radius:7px;box-shadow:none;gap:6px}
+.cf-orbital .main-nav a i{font-size:14px;width:auto;color:#81cbd1}
+.cf-orbital .main-nav a.active,.cf-orbital .main-nav a:hover{background:#25223e;border-color:#565078;color:#fff;box-shadow:none}
+.cf-orbital .sidebar-card{flex:none;padding:7px 10px;margin:0;gap:9px;border:1px solid #37375e;border-radius:7px;background:#15172a}
+.cf-orbital .sidebar-card strong{font-size:9px;color:#a0f6e6;letter-spacing:.07em}.cf-orbital .sidebar-card small{font-size:9px;color:#8f93b3;margin-top:1px}
+.cf-orbital .live-pulse{width:6px;height:6px;background:#79f8cf;box-shadow:0 0 0 4px #5cffca12}
+.cf-orbital .workspace{max-width:1700px;margin:auto;padding:0 clamp(16px,4.3vw,80px) 28px;min-width:0}
+.cf-orbital .orbital-showcase{height:clamp(490px,48vw,660px);min-height:490px;position:relative;overflow:hidden;isolation:isolate;border-bottom:1px solid #383252;display:flex;flex-direction:column;background:radial-gradient(ellipse 48% 54% at 57% 52%,#3f215c78,transparent 78%);margin:0 calc(-1*clamp(16px,4.3vw,80px)) 29px}
+.cf-orbital .orbit-stars{position:absolute;inset:0;z-index:-2;opacity:.55;background-image:radial-gradient(circle at 4% 17%,#c7c5fa 1px,transparent 1.8px),radial-gradient(circle at 52% 8%,#e2a5f5 1px,transparent 2px),radial-gradient(circle at 18% 82%,#b2f5fd 1px,transparent 2px),radial-gradient(circle at 90% 42%,#ddd6ff 1px,transparent 1.8px),radial-gradient(circle at 76% 76%,#d6f5ff 1px,transparent 2px);background-size:186px 153px,274px 173px,281px 241px,209px 267px,347px 231px}
+.cf-orbital .orbit-nebula{position:absolute;z-index:-1;left:18%;top:1%;height:95%;width:75%;pointer-events:none;filter:blur(50px);opacity:.6;background:radial-gradient(ellipse 34% 40% at 49% 50%,#6334b677,transparent 90%),radial-gradient(ellipse 55% 58% at 70% 50%,#20518c44,transparent 85%)}
+.cf-orbital .orbital-hero-copy{pointer-events:none;position:absolute;top:clamp(40px,6vw,91px);left:clamp(24px,6vw,110px);z-index:6;max-width:390px}
+.cf-orbital .orbital-kicker{font:800 10px/1.4 ui-monospace,Consolas,monospace;letter-spacing:.22em;color:#81ffed}
+.cf-orbital .orbital-hero-copy h1{font-size:clamp(37px,4.35vw,69px);letter-spacing:-.072em;line-height:1.02;color:#fff;font-weight:770;margin:14px 0 17px;text-shadow:0 2px 45px #130a2b88}
+.cf-orbital .orbital-hero-copy h1 em{color:#c1afff;font-style:normal}
+.cf-orbital .orbital-hero-copy p{color:#bcbcd7;font-size:12px;line-height:1.65;max-width:285px}
+.cf-orbital .orbit-stage{height:100%;position:relative;width:min(100%,1050px);margin:0 0 0 auto;perspective:1200px;perspective-origin:57% 52%;touch-action:pan-y;cursor:grab}
+.cf-orbital .orbit-stage:active{cursor:grabbing}
+.cf-orbital .orbit-ring{--r:350px;position:absolute;width:0;height:0;left:58%;top:55%;transform-style:preserve-3d;transform:rotateY(var(--rotation,0deg)) rotateX(-8deg);will-change:transform}
+.cf-orbital .orbit-panel{width:235px;height:299px;position:absolute;left:0;top:0;transform-style:preserve-3d;backface-visibility:hidden;transform:translate(-50%,-50%) rotateY(calc(var(--i)*60deg)) translateZ(var(--r));display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;padding:21px 19px;border:1px solid #e5ddff57;border-radius:13px;color:#fff;text-decoration:none;background:linear-gradient(145deg,#e7dafa21,#2d235350 42%,#030d1fdb);box-shadow:0 30px 65px #0606128c,inset 0 1px #ffffff3d;transition:border-color .2s,background-color .2s,box-shadow .2s;min-width:0;cursor:pointer}
+.cf-orbital .orbit-panel::before{content:"";position:absolute;z-index:-1;width:210px;height:210px;left:45%;top:14%;transform:translateX(-40%);border:1px solid #e8efff44;border-radius:50%;box-shadow:0 0 0 26px #c6d1f814,0 0 0 55px #b4a0ff0c}
+.cf-orbital .orbit-panel::after{content:"";position:absolute;pointer-events:none;inset:0;background:linear-gradient(35deg,#040416de,transparent 45%,#ded9ff20);z-index:-1}
+.cf-orbital .orbit-panel:hover,.cf-orbital .orbit-panel:focus-visible{border-color:#95fff1;box-shadow:0 20px 85px #71e5f53d,inset 0 1px #eafaff77}
+.cf-orbital .panel-index{display:block;color:#c0bfff;font:850 10px/1.3 ui-monospace,Consolas,monospace;letter-spacing:.11em}
+.cf-orbital .panel-mark{display:grid;place-items:center;align-self:center;flex:1;font-size:72px;font-weight:400;text-shadow:0 0 25px #a8a0ff99;color:#ebedff;line-height:1}
+.cf-orbital .orbit-panel strong{font-size:25px;letter-spacing:-.07em;line-height:1.12;z-index:1}.cf-orbital .orbit-panel small{font-size:12px;color:#ddd9f8;margin-top:7px;z-index:1;line-height:1.4}
+.cf-orbital .panel-link{display:block;margin-top:15px;font-size:10px;font-weight:800;color:#acfff1;letter-spacing:.04em}
+.cf-orbital .panel-sources{background:linear-gradient(150deg,#5291ce55,#123a5377 50%,#030b1acc)}.cf-orbital .panel-ai{background:linear-gradient(155deg,#9c70ea66,#381d5d85 45%,#120925bb)}.cf-orbital .panel-publish{background:linear-gradient(130deg,#4fa0a988,#14363c99 55%,#050e18de)}.cf-orbital .panel-dest{background:linear-gradient(145deg,#b69cfb55,#33236d85 47%,#090c23)}.cf-orbital .panel-new{background:linear-gradient(135deg,#ea9cb05e,#552749ad 60%,#190b26de)}
+.cf-orbital .orbital-showcase:not(.is-glass) .orbit-panel{backdrop-filter:none;background-color:#292043;box-shadow:0 24px 48px #080715cc}
+.cf-orbital .orbit-center{position:absolute;left:58%;top:55%;transform:translate(-50%,-50%);width:94px;height:94px;border:1px solid #9cf5e97a;border-radius:50%;display:grid;place-items:center;align-content:center;pointer-events:none;box-shadow:0 0 0 12px #9cfffb0c,0 0 40px #8bd8ff35;background:#080e22e8;text-align:center;color:#bdfff5}
+.cf-orbital .orbit-center span{font-size:22px}.cf-orbital .orbit-center strong{font:800 9px/1.13 ui-monospace,Consolas,monospace;letter-spacing:.05em}
+.cf-orbital .orbit-bottom{z-index:7;display:flex;align-items:center;justify-content:space-between;gap:12px;position:absolute;bottom:16px;left:clamp(24px,6vw,110px);right:clamp(24px,6vw,110px);pointer-events:none}
+.cf-orbital .orbit-hint{display:flex;align-items:center;gap:11px;color:#a6a5cb;font:800 10px ui-monospace,Consolas,monospace;letter-spacing:.1em}
+.cf-orbital .orbit-hint-line{display:block;width:31px;height:1px;background:#7df4e1}
+.cf-orbital .orbit-controls{pointer-events:auto;display:flex;align-items:center;gap:8px;color:#b5ffed;font:750 12px ui-monospace,monospace}
+.cf-orbital .orbit-controls button{border:1px solid #5e688a;background:#171832e6;color:#dfe7ff;min-width:40px;min-height:36px;padding:7px 10px;border-radius:5px;font-weight:800;cursor:pointer}
+.cf-orbital .orbit-controls button:hover{background:#332e59;border-color:#83e7de}.cf-orbital #orbitGlass{font-size:10px;min-width:95px}
+.cf-orbital #orbitCounter{min-width:55px;text-align:center}
+.cf-orbital .orbital-work-label{display:flex;justify-content:space-between;gap:10px;margin:5px 0 24px;border-bottom:1px solid #34334e;padding-bottom:15px;color:#9b9fcb;letter-spacing:.17em;font:800 10px ui-monospace,Consolas,monospace}
+.cf-orbital .page-header h1{font-size:clamp(26px,2.7vw,41px);color:#f7f5ff}
+.cf-orbital .page-header p{color:#a6a9c3}.cf-orbital .page-header{padding:0 0 13px;border-bottom:1px solid #343550}
+.cf-orbital .eyebrow,.cf-orbital .section-kicker{color:#a2a7cc}.cf-orbital .system-chip{background:#191b33;border:1px solid #444460;color:#b2f3e6}
+.cf-orbital .btn{background:#7462d4;color:#fff;border:1px solid #9c8bff77;border-radius:7px}.cf-orbital .btn:hover{background:#8b73ee}
+.cf-orbital .btn.ghost{background:#24233a;border:1px solid #605a88;color:#e0d8ff}.cf-orbital .btn.danger{background:#9e395a;border-color:#bd607f}
+.cf-orbital .panel,.cf-orbital .demo-provider{background:linear-gradient(145deg,#1a1b33,#101426);border:1px solid #3b3e59;border-radius:12px;box-shadow:0 10px 30px #0002;color:#e8eafa}
+.cf-orbital .panel h2,.cf-orbital .panel h3{color:#f4f1ff}
+.cf-orbital .panel p,.cf-orbital .demo-provider p{color:#b5b9d3}
+.cf-orbital .demo-notice{background:#102c30;border:1px solid #316666;color:#baf2e6;border-radius:8px}
+.cf-orbital .demo-warning{background:#30252e;border:1px solid #896a54;color:#f0d6a5;border-radius:8px}
+.cf-orbital .studio-overview{background:linear-gradient(105deg,#281e46,#131c34 70%);border:1px solid #5c4b86;border-radius:12px}
+.cf-orbital .studio-overview strong{font-size:22px;color:#fff}.cf-orbital .studio-overview small,.cf-orbital .studio-overview p{color:#c4b8e5}
+.cf-orbital .studio-kpis a{background:#15182c;border:1px solid #42445f;border-radius:10px}.cf-orbital .studio-kpis strong{color:#efe8ff}.cf-orbital .studio-kpis small,.cf-orbital .studio-kpis span{color:#a8a8c9}
+.cf-orbital .kanban-column{background:#14172a;border:1px solid #3d3d55;border-radius:12px}
+.cf-orbital .kanban-column header{color:#e1dff4}.cf-orbital .kanban-column header b{background:#2b2949;color:#9eeadb}
+.cf-orbital .kanban-card,.cf-orbital .material-card{background:#20223c;color:#eeeefb;border:1px solid #45415d;border-radius:9px}
+.cf-orbital .kanban-card strong,.cf-orbital .material-card h2{color:#f5f4ff}.cf-orbital .kanban-card p,.cf-orbital .kanban-card small,.cf-orbital .material-body p,.cf-orbital .material-meta{color:#bdc0d6}
+.cf-orbital .material-cover{background:linear-gradient(145deg,#7a48d1,#323a81)}.cf-orbital .material-card:nth-child(3n+2) .material-cover{background:linear-gradient(135deg,#2b8c8f,#35529d)}.cf-orbital .material-card:nth-child(3n+3) .material-cover{background:linear-gradient(135deg,#8f476b,#593a87)}
+.cf-orbital .demo-field span{color:#e3e5fa}
+.cf-orbital .demo-field input,.cf-orbital .demo-field select,.cf-orbital .demo-field textarea,.cf-orbital .demo-tools input,.cf-orbital .demo-tools select{background:#0e1424;border:1px solid #535272;border-radius:7px;color:#f8f5ff}
+.cf-orbital .demo-field input::placeholder,.cf-orbital .demo-tools input::placeholder{color:#9095b2}
+.cf-orbital .demo-preview-card{background:#151b30;border-color:#5a5774;color:#e8ecf7}.cf-orbital .demo-preview-top{background:#24253f;color:#a8f0e0}.cf-orbital .demo-preview-body{background:#151b30;color:#e5e8f4}
+.cf-orbital .demo-log{color:#d9dcf6;border-color:#42445d}.cf-orbital .demo-log small{color:#a4a8c1}
+.cf-orbital .demo-empty{color:#bec2d9}.cf-orbital .demo-flow span{background:#20233d;border-color:#504e6d;color:#eeeafe}
+.cf-orbital .status-pill{background:#243a3d;color:#a5f3e5}.cf-orbital .status-new{background:#493c32;color:#f6ddac}.cf-orbital .status-queued{background:#30385b;color:#bfcbff}
+.cf-orbital .channel-state{background:#274842;color:#b7fff1}.cf-orbital .channel-state.off{background:#302944;color:#b7b0d2}
+.cf-orbital .demo-footer{border-top:1px solid #333652;color:#8f96b5;margin:36px 0 0;padding:17px 0;font-size:11px}.cf-orbital .demo-footer a{color:#9adfdb;text-decoration:underline}
+.cf-orbital .toast{background:#292347;color:#fff;box-shadow:0 15px 40px #0008}
+.cf-orbital .orbital-showcase[hidden]{display:none!important}
+.cf-orbital:not(.is-dashboard) .orbital-work-label{margin-top:26px}
+@media(max-width:1220px){.cf-orbital .sidebar-card{display:none}.cf-orbital .orbit-ring{--r:300px}.cf-orbital .orbital-hero-copy{left:30px;max-width:340px}.cf-orbital .orbital-hero-copy h1{font-size:46px}.cf-orbital .orbital-hero-copy p{max-width:230px}}
+@media(max-width:900px){.cf-orbital .sidebar{flex-wrap:wrap;justify-content:center;gap:7px}.cf-orbital .brand{margin-right:auto}.cf-orbital .main-nav{width:100%;overflow-x:auto;flex-wrap:nowrap;justify-content:flex-start;order:2}.cf-orbital .main-nav a{flex:none}.cf-orbital .orbital-showcase{min-height:520px;height:520px}.cf-orbital .orbital-hero-copy{top:24px;left:24px;max-width:320px}.cf-orbital .orbital-hero-copy h1{font-size:42px}.cf-orbital .orbit-ring{--r:245px;top:64%;left:53%}.cf-orbital .orbit-center{top:64%;left:53%}.cf-orbital .orbit-stage{width:100%}.cf-orbital .orbit-panel{width:204px;height:255px}.cf-orbital .panel-mark{font-size:50px}.cf-orbital .orbit-bottom{left:24px;right:24px}}
+@media(max-width:620px){.cf-orbital .demo-label-secondary{display:none}.cf-orbital .demo-banner{gap:4px}.cf-orbital .sidebar{padding:12px 15px}.cf-orbital .workspace{padding-left:16px;padding-right:16px}.cf-orbital .orbital-showcase{margin-left:-16px;margin-right:-16px;min-height:580px;height:580px}.cf-orbital .orbital-hero-copy{max-width:calc(100% - 40px);left:20px;top:25px}.cf-orbital .orbital-hero-copy h1{font-size:39px;max-width:330px}.cf-orbital .orbital-hero-copy p{font-size:11px;max-width:285px}.cf-orbital .orbit-ring{--r:198px;left:50%;top:65%}.cf-orbital .orbit-center{left:50%;top:65%;width:65px;height:65px}.cf-orbital .orbit-center span{font-size:13px}.cf-orbital .orbit-center strong{font-size:7px}.cf-orbital .orbit-panel{width:160px;height:220px;padding:14px 12px}.cf-orbital .orbit-panel strong{font-size:20px}.cf-orbital .orbit-panel small{font-size:10px}.cf-orbital .panel-mark{font-size:43px}.cf-orbital .orbit-bottom{bottom:12px;left:16px;right:16px}.cf-orbital .orbit-hint{font-size:8px;letter-spacing:0}.cf-orbital .orbit-hint-line{display:none}.cf-orbital .orbit-controls{gap:4px}.cf-orbital .orbit-controls button{min-width:31px;padding:5px 8px}.cf-orbital #orbitGlass{min-width:72px;font-size:9px}.cf-orbital .orbital-work-label{font-size:9px;letter-spacing:.06em}.cf-orbital .studio-kpis{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(prefers-reduced-motion:reduce){.cf-orbital *,.cf-orbital *:before,.cf-orbital *:after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
