@@ -157,3 +157,11 @@ html{scroll-behavior:smooth}body.cf-orbital{background:radial-gradient(ellipse 5
 @media(max-width:900px){.cf-orbital .orbit-ring{left:0;top:0}.cf-orbital .orbit-panel{width:205px;height:260px;top:55%}.cf-orbital .orbit-center{top:55%}}
 @media(max-width:620px){.cf-orbital .orbit-ring{left:0;top:0}.cf-orbital .orbit-panel{width:174px;height:228px;top:62%;padding:14px 12px}.cf-orbital .orbit-center{top:62%;width:47px;height:47px}.cf-orbital .cf-source-grid{grid-template-columns:1fr}.cf-orbital .cf-source-choice{min-height:185px}.cf-orbital .orbital-hero-copy p{max-width:310px}.cf-orbital .orbit-panel strong{font-size:20px}}
 @media(prefers-reduced-motion:reduce){.cf-orbital .orbit-panel{transition:none!important}}
+
+/* CFO03: compact desktop hero; carousel controls visible without scrolling.
+   On phones retain the existing 580px layout and readable sources. */
+@media (min-width: 901px) {
+ .cf-orbital .orbital-showcase { height: clamp(430px,34vw,500px); min-height:430px; }
+ .cf-orbital .orbit-bottom { bottom:18px; justify-content:flex-end; }
+ .cf-orbital .orbit-hint { display:none; }
+}
