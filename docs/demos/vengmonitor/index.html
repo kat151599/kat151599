@@ -1,13 +1,65 @@
-<!doctype html><html lang="uk"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#102237"><title>VengMonitor · Demo Edition</title><link rel="stylesheet" href="styles.css"><script defer src="app.js"></script></head><body>
-<div class="banner"><strong>VENGMONITOR · DEMO EDITION · ВИГАДАНІ ДАНІ · БЕЗ ПІДКЛЮЧЕННЯ ДО ОБЛАДНАННЯ</strong><div><a target="_top" href="../../index.html">⌂ Домой</a><a target="_top" href="../../projects/industrial-monitoring.html">Про проєкт ↗</a><button id="reset" type="button">Скинути демо ↻</button></div></div>
-<div class="shell"><aside class="side"><div class="brand"><span class="monogram">V</span><div><strong>VengMonitor</strong><small>Industrial monitoring · Demo</small></div></div><nav aria-label="Розділи"><button data-view="overview" aria-current="page">Огляд</button><button data-view="monitoring">Моніторинг</button><button data-view="log">Журнал</button><button data-view="settings">Налаштування</button></nav><div class="side-note"><strong>Демо без сервера</strong><p>Жодних справжніх даних об’єкта, сповіщень Telegram чи команд обладнанню.</p></div></aside>
-<main class="content"><header class="top"><div><span class="eyebrow">VengMonitor / SERV + Mirror</span><h1 id="title">Огляд</h1><p id="subtitle">Стан локального моніторингу та віддаленого вузла</p></div><span class="demo-mark">● SIMULATION</span></header>
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0a1821">
+<meta name="description" content="VengMonitor: незалежний інтерактивний симулятор промислового моніторингу з вигаданими даними.">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'none'; connect-src 'none'; frame-src 'none'; object-src 'none'; worker-src 'none'; base-uri 'none'; form-action 'none'">
+<title>VengMonitor · Interactive Room Gallery Demo</title>
+<link rel="stylesheet" href="styles.css"><script defer src="app.js"></script>
+</head>
+<body class="vm-parallelism">
+<div class="banner"><strong><span class="banner-pulse" aria-hidden="true"></span> VENGMONITOR <span class="banner-sub">/ INTERACTIVE CONTROL WALL · SIMULATION ONLY</span></strong>
+<div><a target="_top" href="../../index.html">⌂ Головна</a><a target="_top" href="../../projects/industrial-monitoring.html">Про проєкт ↗</a><button id="reset" type="button">Скинути демо ↻</button></div></div>
+<div class="shell">
+<aside class="side">
+ <div class="brand"><span class="monogram" aria-hidden="true">V</span><div><strong>VengMonitor</strong><small>Industrial system / SERV + Mirror</small></div></div>
+ <nav aria-label="Розділи"><button type="button" data-view="overview" aria-current="page">Контрольна стіна</button><button type="button" data-view="monitoring">Показники</button><button type="button" data-view="log">Журнал подій</button><button type="button" data-view="settings">Параметри</button></nav>
+ <div class="side-note"><strong>LIVE SIMULATION</strong><p>Жодного підключення до обладнання, зовнішніх API чи Telegram.</p></div>
+</aside>
+<main class="content">
+<header class="top"><div><span class="eyebrow">ВИРОБНИЧА ТЕЛЕМЕТРІЯ / DEMO EDITION</span><h1 id="title">Огляд</h1><p id="subtitle">Стан локального моніторингу та віддаленого вузла</p></div><span class="demo-mark">● SIMULATION</span></header>
 <section class="view active" id="view-overview">
-<div class="metrics"><article class="metric"><span>Локальний SERV</span><strong>Працює</strong><small>Навіть без інтернету</small></article><article class="metric"><span>Приміщень</span><strong>3</strong><small>Демонстраційні дані</small></article><article class="metric" id="alarmsTile"><span>Активних тривог</span><strong id="alarmCount">0</strong><small>Технологічні та зв’язок</small></article><article class="metric" id="mirrorTile"><span>Mirror</span><strong id="mirrorShort">На зв’язку</strong><small>Віддалений контур</small></article></div>
-<section class="panel simulator"><span class="eyebrow">Інтерактивні сценарії</span><h2>Перевір поведінку системи</h2><p>Зміни показники або зв’язок і простеж створення подій. Це навчальна модель, а не production-алгоритм.</p><div class="scenarios"><button data-scenario="vent"><span>◌</span><b>Вентиляція 0%</b><small>Приміщення 2</small></button><button data-scenario="heat"><span>♨</span><b>Перегрів</b><small>Приміщення 2</small></button><button data-scenario="disconnect"><span>⌁</span><b>Втрата зв’язку</b><small>Mirror / heartbeat</small></button><button data-scenario="normal"><span>✓</span><b>Відновити норму</b><small>Події cleared</small></button></div><p id="scenarioMessage" role="status" aria-live="polite" class="notice">Оберіть сценарій, щоб побачити реакцію SERV і Mirror.</p></section>
-<div class="cols"><section class="panel"><h2>Приміщення · SERV</h2><div id="rooms"></div></section><section class="panel"><h2>Доставка · Mirror</h2><div class="mirror" id="mirrorBox"><span class="signal"></span><div><strong id="mirrorState">Зв’язок активний</strong><small id="mirrorDetail">Mirror отримує готові події SERV</small></div></div><div class="delivery"><small>Останнє сповіщення (імітація)</small><strong id="lastNotice">—</strong><small>Telegram не підключено. Реальних повідомлень немає.</small></div><div class="mini">VengSystem → SERV → Mirror → Telegram*</div></section></div>
-<section class="panel"><div class="panel-header"><h2>Останні події</h2><button class="link-btn" data-to="log">Повний журнал ↗</button></div><div id="latestEvents"></div></section></section>
+ <div class="gallery-heading"><div><span class="eyebrow">01 / ІНТЕРАКТИВНА ГАЛЕРЕЯ</span><h2>Об’єкт під контролем</h2><p>Три умовні приміщення, локальний SERV та віддалений Mirror. Гортай панелі вправо →</p></div><span class="gallery-direction">← SCROLL / SWIPE →</span></div>
+ <div class="wall" tabindex="0" role="region" aria-label="Горизонтальна галерея промислового моніторингу: гортайте вправо або вліво">
+  <div class="wall-track">
+   <article class="wall-intro wall-tile">
+    <div class="tile-topline"><span>VENG / MONITORING</span><span>01 — 06</span></div>
+    <div class="wall-intro-main"><span class="intro-glyph" aria-hidden="true">◈</span><span class="eyebrow">РОБОЧИЙ КОНТУР</span><h2>Дані.<br>Події.<br><em>Контроль.</em></h2><p>Не керує обладнанням. Визначає аварії та демонструє маршрут готових подій.</p></div>
+    <div class="intro-bottom"><strong>SERV</strong><span>Автономний локальний моніторинг</span><strong>03</strong><span>Умовні приміщення</span></div>
+   </article>
+   <div id="rooms" class="room-deck" aria-label="Поточні показники трьох приміщень"></div>
+   <article class="wall-tile alarm-tile" id="alarmsTile">
+    <div class="tile-topline"><span>ALERT STREAM</span><span>STATUS / LIVE</span></div>
+    <div class="alarm-center"><span class="alarm-symbol" aria-hidden="true">!</span><span class="eyebrow">АКТИВНІ ТРИВОГИ</span><strong id="alarmCount">0</strong><p>Система створює подію <b>raised</b> при виникненні тривоги та <b>cleared</b> при завершенні.</p></div>
+    <span class="tile-bottom-label">SERV / EVENT ENGINE</span>
+   </article>
+   <article class="wall-tile mirror-tile" id="mirrorTile">
+    <div class="tile-topline"><span>REMOTE MIRROR</span><span>HEARTBEAT</span></div>
+    <span class="eyebrow">ВІДДАЛЕНИЙ КОНТУР</span><h2 id="mirrorShort">На зв’язку</h2>
+    <div class="mirror" id="mirrorBox"><span class="signal" aria-hidden="true"></span><div><strong id="mirrorState">З’єднання активне</strong><small id="mirrorDetail">Mirror отримує готові події SERV</small></div></div>
+    <div class="delivery"><small>Останнє сповіщення (імітація)</small><strong id="lastNotice">—</strong><small>Telegram не підключено. Справжніх повідомлень немає.</small></div>
+    <div class="mini">VengSystem → SERV → Mirror → Telegram*</div>
+   </article>
+  </div>
+ </div>
+ <section id="roomInspector" class="room-inspector" aria-label="Деталі обраного приміщення" hidden></section>
+ <section class="scenario-section" aria-labelledby="scenario-title"><div class="section-heading"><span class="eyebrow">02 / ВПЛИВ НА СИСТЕМУ</span><h2 id="scenario-title">Запусти аварійний сценарій</h2><p>Усі дії безпечні: це модель із вигаданими даними, не керування вентиляцією.</p></div>
+  <div class="scenarios">
+   <button type="button" data-scenario="vent"><span aria-hidden="true">◌</span><b>Вентиляція 0%</b><small>Приміщення 2 / Fan failure</small></button>
+   <button type="button" data-scenario="heat"><span aria-hidden="true">♨</span><b>Перегрів</b><small>Приміщення 2 / Temperature</small></button>
+   <button type="button" data-scenario="disconnect"><span aria-hidden="true">⌁</span><b>Втрата зв’язку</b><small>Mirror / Heartbeat timeout</small></button>
+   <button type="button" data-scenario="normal"><span aria-hidden="true">✓</span><b>Відновити норму</b><small>Events cleared / Recovery</small></button>
+  </div>
+  <p id="scenarioMessage" role="status" aria-live="polite" class="notice">Оберіть сценарій, щоб побачити реакцію SERV і Mirror.</p>
+ </section>
+ <section class="events-section"><div class="panel-header"><div><span class="eyebrow">03 / ЖУРНАЛ СПРАЦЮВАНЬ</span><h2>Останні події</h2></div><button class="link-btn" type="button" data-to="log">Повний журнал ↗</button></div><div id="latestEvents"></div></section>
+</section>
 <section class="view" id="view-monitoring"><section class="panel"><h2>Історія температур</h2><p>Вигадані вимірювання за 12 кроків симуляції.</p><div class="legend">🟢 Приміщення 1 · 🔵 Приміщення 2 · 🟠 Приміщення 3</div><div id="chart" class="chart"></div></section><section class="panel"><h2>Поточні дані</h2><div class="scroll"><table><thead><tr><th>Приміщення</th><th>Температура</th><th>Вентиляція</th><th>Стан</th></tr></thead><tbody id="monitorRows"></tbody></table></div></section></section>
 <section class="view" id="view-log"><section class="panel"><h2>Журнал подій</h2><p>Перехід <code>raised</code> створюється один раз при виникненні тривоги, <code>cleared</code> — при її завершенні. Доставка Mirror показана умовно.</p><div class="scroll"><table><thead><tr><th>Час</th><th>Джерело</th><th>Подія</th><th>Стан</th><th>Доставка</th></tr></thead><tbody id="logRows"></tbody></table></div></section></section>
 <section class="view" id="view-settings"><section class="panel"><h2>Демонстраційні налаштування</h2><p>Це вигаданий поріг, а не конфігурація реального підприємства.</p><label class="field">Поріг температури, °C<input id="threshold" type="number" value="29" min="24" max="40" step=".5"></label></section><section class="panel"><h2>Чому SERV і Mirror окремо?</h2><p><b>SERV:</b> читає журнали, визначає технологічні тривоги та веде їх історію локально.</p><p><b>Mirror:</b> забезпечує віддалений огляд, доставляє готові події й окремо фіксує втрату зв’язку. Він не керує вентиляцією.</p><p>У симуляції очікування 5 секунд відповідає умовним 300 секундам контролю зв’язку. Це прискорений сценарій для відвідувача.</p></section></section>
-</main></div></body></html>
+
+<footer class="vm-credit">Макет контрольної стіни адаптовано за мотивами <a href="https://html5up.net/parallelism" target="_blank" rel="noopener noreferrer">Parallelism by HTML5 UP</a> · <a href="https://html5up.net/license" target="_blank" rel="noopener noreferrer">CC BY 3.0</a>. Оригінальні фото шаблону не використовуються. Дані — вигадані.</footer>
+</main>
+</div>
+</body></html>
