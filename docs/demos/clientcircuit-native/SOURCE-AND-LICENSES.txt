@@ -1,7 +1,9 @@
-ClientCircuit - browser-only demo of modified Vikunja Vue frontend.
+ClientCircuit - browser-only modified Vikunja Vue frontend.
 Vikunja frontend license: AGPL-3.0-or-later; full text in LICENSE.
-Corresponding modified frontend source: Vikunja-frontend-corresponding-source-f43d83ce.zip
-Source revision: f43d83ce9e5f47dd2759488cccf49740382c3545
-Call Center code adapts Open Cold Dialer; original licenses and notices apply.
-Other third-party dependencies retain their respective licenses.
-Demo data is fictional and browser-local; no real calls, mail or production APIs.
+Corresponding modified frontend source: Vikunja-frontend-corresponding-source-f43d83ce-MAS02.zip
+Unmodified baseline repository revision: f43d83ce9e5f47dd2759488cccf49740382c3545
+MAS02 source overlay: src/views/Home.vue and src/components/home/MasonryLanding.vue.
+Complete distributed source archive SHA256: 297C7A3D0A34BB2140621475C5085D7BDD98A772A9A5BF65689492C166930B47
+Call Center adapts Open Cold Dialer; original licenses and notices apply.
+Third-party packages retain their own licenses.
+Demo is fictional and browser-local: no real calls, mail or production APIs.
