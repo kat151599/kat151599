@@ -1,10 +1,11 @@
 ClientCircuit - browser-only modified Vikunja Vue frontend.
 Vikunja frontend license: AGPL-3.0-or-later; full text in LICENSE.
-Corresponding modified frontend source: Vikunja-frontend-corresponding-source-f43d83ce-MAS05.zip
+Corresponding modified frontend source: Vikunja-frontend-corresponding-source-f43d83ce-MAS06.zip
 Unmodified baseline repository revision: f43d83ce9e5f47dd2759488cccf49740382c3545
 MAS02 source overlay: src/views/Home.vue and src/components/home/MasonryLanding.vue.
 MAS05 sidebarless demo shell: src/components/home/ContentAuth.vue and src/components/home/AppHeader.vue.
-Complete distributed source archive SHA256: E71FD86276F43D1939527A93F73C48077D6375B6A80EBEE0AA8D6DFA8CF5143F
+MAS06 compact cohesive Masonry and persistent workspace header with beneath-header mode switch: src/views/Home.vue and src/components/home/MasonryLanding.vue.
+Complete distributed source archive SHA256: 67A853BA025DB17F8192399F2497427804C80DD05B3C496A1DC05428DA320BF4
 Call Center adapts Open Cold Dialer; original licenses and notices apply.
 Third-party packages retain their own licenses.
 Demo is fictional and browser-local: no real calls, mail or production APIs.
