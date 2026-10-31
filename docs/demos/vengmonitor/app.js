@@ -51,10 +51,16 @@
   evaluate();history();render();
  }
  // VENP02: frontend-only inspection of an individual room using the existing simulator state.
+ // VISUAL status only. Existing alarm engine remains the single source of alarm truth.
+ // Amber: temperature deviates by >=5°C from this room's normal baseline without an active alarm.
+ // Red: existing simulator has an actual active room alarm (highest priority).
+ function roomSeverity(temp,nominal,alarmActive){return alarmActive?'danger':Math.abs(temp-nominal)>=5?'warn':'normal'}
+ function roomStatusText(severity){return severity==='danger'?'Тривога':severity==='warn'?'Попередження':'Норма'}
  function renderRoomInspector(){
   const panel=$('roomInspector'),index=state.selectedRoom;
   if(index===null||index<0||index>=base.length){panel.hidden=true;panel.innerHTML='';return}
-  const r=rooms()[index],danger=index===1&&(state.active.has('vent')||state.active.has('heat'));
+  const r=rooms()[index],severity=roomSeverity(r.temp,base[index].temp,index===1&&(state.active.has('vent')||state.active.has('heat')));
+  const danger=severity==='danger',warning=severity==='warn';
   const samples=state.series.map(row=>row[index]).filter(Number.isFinite);
   const bottom=Math.floor(Math.min(r.temp,state.limit,...samples))-2;
   const top=Math.ceil(Math.max(r.temp,state.limit,...samples))+2;
@@ -79,8 +85,8 @@
    +'<button type="button" class="room-inspector-close" data-close-room>Закрити ✕</button></div>'
    +'<div class="room-inspector-measures">'
    +'<div class="room-inspector-measure"><small>Температура</small><strong>'+r.temp.toFixed(1)+' °C</strong></div>'
-   +'<div class="room-inspector-measure '+(danger?'critical':'')+'"><small>Вентиляція</small><strong>'+r.fan+'%</strong></div>'
-   +'<div class="room-inspector-measure '+(danger?'critical':'')+'"><small>Статус</small><strong>'+(danger?'Тривога':'Норма')+'</strong></div></div>'
+   +'<div class="room-inspector-measure '+(danger?'critical':warning?'warning':'')+'"><small>Вентиляція</small><strong>'+r.fan+'%</strong></div>'
+   +'<div class="room-inspector-measure '+(danger?'critical':warning?'warning':'')+'"><small>Статус</small><strong>'+roomStatusText(severity)+'</strong></div></div>'
    +'<div class="room-inspector-grid">'
    +'<section class="room-inspector-panel"><h3>Температура · історія</h3><p>Синтетичні вимірювання за останні '+samples.length+' кроків. Пунктир — поріг.</p>'+svg+'</section>'
    +'<section class="room-inspector-panel"><h3>Події приміщення</h3><p>Історія raised / cleared, від нових до старих. Загальні події Mirror показані в журналі.</p>'+list+'</section></div>';
@@ -96,10 +102,11 @@
   document.querySelectorAll('[data-scenario]').forEach(b=>b.classList.toggle('selected',b.dataset.scenario===state.mode));
   const rs=rooms();
   $('rooms').innerHTML=rs.map((r,i)=>{
-   const bad=i===1&&(state.active.has('vent')||state.active.has('heat'));
-   return '<div class="room '+(bad?'danger':'')+'" aria-current="'+(state.selectedRoom===i?'true':'false')+'"><div><strong>'+r.name+'</strong><small><span class="badge '+(bad?'red':'')+'">'+(bad?'Тривога':'Норма')+'</span></small></div><div class="numbers"><b>'+r.temp.toFixed(1)+' °C</b><small>Вентиляція '+r.fan+'%</small></div><button type="button" class="room-open" data-room="'+i+'" aria-controls="roomInspector" aria-expanded="'+(state.selectedRoom===i?'true':'false')+'">'+(state.selectedRoom===i?'Згорнути деталі ↑':'Деталі приміщення ↗')+'</button></div>';
+   const severity=roomSeverity(r.temp,base[i].temp,i===1&&(state.active.has('vent')||state.active.has('heat')));
+   const badgeClass=severity==='danger'?'red':severity==='warn'?'orange':'';
+   return '<div class="room '+severity+'" aria-current="'+(state.selectedRoom===i?'true':'false')+'"><div><strong>'+r.name+'</strong><small><span class="badge '+badgeClass+'">'+roomStatusText(severity)+'</span></small></div><div class="numbers"><b>'+r.temp.toFixed(1)+' °C</b><small>Вентиляція '+r.fan+'%</small></div><button type="button" class="room-open" data-room="'+i+'" aria-controls="roomInspector" aria-expanded="'+(state.selectedRoom===i?'true':'false')+'">'+(state.selectedRoom===i?'Згорнути деталі ↑':'Деталі приміщення ↗')+'</button></div>';
   }).join('');
-  $('monitorRows').innerHTML=rs.map((r,i)=>'<tr><td>'+r.name+'</td><td>'+r.temp.toFixed(1)+' °C</td><td>'+r.fan+'%</td><td>'+(i===1&&(state.active.has('vent')||state.active.has('heat'))?'Тривога':'Норма')+'</td></tr>').join('');
+  $('monitorRows').innerHTML=rs.map((r,i)=>'<tr><td>'+r.name+'</td><td>'+r.temp.toFixed(1)+' °C</td><td>'+r.fan+'%</td><td>'+roomStatusText(roomSeverity(r.temp,base[i].temp,i===1&&(state.active.has('vent')||state.active.has('heat'))))+'</td></tr>').join('');
   $('latestEvents').innerHTML=state.events.length?state.events.slice(0,5).map(e=>'<div class="event"><strong class="'+e.type+'">'+e.type.toUpperCase()+' · '+escape(e.message)+'</strong><small>'+e.time+' · '+e.source+' · '+e.delivered+'</small></div>').join(''):'<p>Поки немає аварійних подій. Натисни одну з кнопок сценаріїв.</p>';
   $('logRows').innerHTML=state.events.length?state.events.map(e=>'<tr><td>'+e.time+'</td><td>'+e.source+'</td><td>'+escape(e.message)+'</td><td>'+e.type+'</td><td>'+e.delivered+'</td></tr>').join(''):'<tr><td colspan="5">Немає подій</td></tr>';
   chart();
