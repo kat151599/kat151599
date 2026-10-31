@@ -1,0 +1,19 @@
+/* CCM01 - only project-case mobile showcase; no changes to Vikunja runtime. */
+.cc-native .cc-mobile-spotlight{margin:36px 0 48px;padding:clamp(24px,4vw,52px);display:grid;grid-template-columns:minmax(0,1fr) minmax(240px,335px);gap:clamp(24px,5vw,70px);align-items:center;background:radial-gradient(ellipse at 77% 33%,#296b7a5c,transparent 59%),linear-gradient(135deg,#112e32,#10202b);border:1px solid #467a7a;border-radius:24px;box-shadow:0 20px 50px #0003;overflow:hidden}
+.cc-native .cc-mobile-spotlight .eyebrow{color:#a4f4d3;letter-spacing:.17em;font-size:11px;font-weight:800}
+.cc-native .cc-mobile-spotlight h2{font-size:clamp(28px,3.5vw,44px);line-height:1.12;letter-spacing:-.05em;margin:12px 0 17px;color:#f1fff8}
+.cc-native .cc-mobile-spotlight p{color:#c3ddd6;font-size:15px;max-width:530px;line-height:1.75}
+.cc-native .cc-mobile-spotlight .cc-mobile-facts{display:flex;flex-wrap:wrap;gap:9px;margin:20px 0 25px;padding:0;list-style:none}
+.cc-native .cc-mobile-spotlight .cc-mobile-facts li{color:#d6f9ea;background:#173c38;border:1px solid #46796c;border-radius:999px;padding:7px 12px;font-size:12px;font-weight:700}
+.cc-native .cc-mobile-spotlight .cc-mobile-note{font-size:12px;color:#9bbfb7}
+.cc-native .cc-mobile-phone-link{width:min(100%,320px);display:block;justify-self:center;text-decoration:none;position:relative;border-radius:45px;padding:11px;background:linear-gradient(135deg,#6f8291,#132028 38%,#314450 76%,#9db7b5);box-shadow:0 35px 70px #0009,0 0 0 1px #a8d8ce55;transform:rotate(3deg);transition:transform .2s,box-shadow .2s}
+.cc-native .cc-mobile-phone-link:hover,.cc-native .cc-mobile-phone-link:focus-visible{transform:rotate(0deg) translateY(-5px);box-shadow:0 40px 75px #000b,0 0 0 2px #8dfff0}
+.cc-native .cc-mobile-phone-screen{position:relative;background:#eaf2f8;overflow:hidden;border-radius:35px;aspect-ratio:390/844;border:2px solid #050c15}
+.cc-native .cc-mobile-phone-screen img{width:100%;height:100%;display:block;object-fit:cover;object-position:top center}
+.cc-native .cc-mobile-phone-camera{position:absolute;z-index:1;top:8px;left:50%;width:88px;height:17px;transform:translateX(-50%);border-radius:999px;background:#081119;box-shadow:0 1px 0 #ffffff35}
+.cc-native .cc-mobile-phone-camera:after{content:"";position:absolute;right:15px;top:6px;width:5px;height:5px;border-radius:50%;background:#34536b}
+.cc-native .cc-mobile-phone-chin{position:absolute;bottom:9px;left:50%;transform:translateX(-50%);height:4px;width:91px;border-radius:999px;background:#09121bcc;z-index:1}
+.cc-native .cc-mobile-phone-link .cc-mobile-device-label{position:absolute;right:-9px;bottom:28px;z-index:2;background:#a2f3cb;border:1px solid #87e5c0;border-radius:9px;padding:10px 14px;box-shadow:0 10px 23px #0006;color:#0c2b25;font-size:12px;font-weight:850;transform:rotate(-3deg)}
+@media(max-width:760px){.cc-native .cc-mobile-spotlight{grid-template-columns:1fr;gap:28px;padding:24px 18px}.cc-native .cc-mobile-phone-link{max-width:288px;transform:rotate(0)}.cc-native .cc-mobile-spotlight p{font-size:14px}}
+@media(max-width:480px){.cc-native .cc-mobile-spotlight{margin:24px 0 32px}.cc-native .cc-mobile-spotlight h2{font-size:30px}.cc-native .cc-mobile-phone-link .cc-mobile-device-label{right:-1px}}
+@media(prefers-reduced-motion:reduce){.cc-native .cc-mobile-phone-link{transition:none}}
