@@ -6,8 +6,8 @@
 <meta name="description" content="ContentFlow: інтерактивна демонстрація редакційного конвеєра із вигаданими даними.">
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'none'; connect-src 'none'; frame-src 'none'; worker-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
 <title>ContentFlow · Orbital Editorial Workspace · Demo</title>
-<link rel="stylesheet" href="./demo.css?v=cf-orbital-01">
-<script defer src="./demo.js"></script><script defer src="./orbital.js?v=cf-orbital-01"></script>
+<link rel="stylesheet" href="./demo.css?v=cf-orbital-02">
+<script defer src="./demo.js?v=cf-orbital-02"></script><script defer src="./orbital.js?v=cf-orbital-02"></script>
 </head>
 <body class="cf-orbital">
 <div class="demo-banner"><span class="demo-label"><span class="orbit-live" aria-hidden="true"></span> CONTENTFLOW <span class="demo-label-secondary">/ DEMO EDITION · ВИГАДАНІ ДАНІ · OFFLINE</span></span>
@@ -28,20 +28,18 @@
 <main class="workspace" id="main">
 <section class="orbital-showcase" id="orbitalShowcase" aria-labelledby="orbitalTitle">
 <div class="orbit-stars" aria-hidden="true"></div><div class="orbit-nebula" aria-hidden="true"></div>
-<div class="orbital-hero-copy"><span class="orbital-kicker">CONTENT PIPELINE / INTERACTIVE SPACE</span><h1 id="orbitalTitle">Усі ідеї.<br><em>На своїй орбіті.</em></h1><p>Від джерела до погодженої публікації. Обери напрям — відкриється справжній розділ демоверсії.</p></div>
-<div class="orbit-stage" id="orbitStage" tabindex="0" role="region" aria-label="Інтерактивна орбіта шести напрямів ContentFlow. Стрілки вліво і вправо обертають.">
+<div class="orbital-hero-copy"><span class="orbital-kicker">CONTENT SOURCES / INTERACTIVE ORBIT</span><h1 id="orbitalTitle">Усі ідеї.<br><em>На своїй орбіті.</em></h1><p>Обери джерело на орбіті — і переходь до створення матеріалу. Імпорт із соцмереж та AI-запити в демо вимкнені.</p></div>
+<div class="orbit-stage" id="orbitStage" tabindex="0" role="region" aria-label="Інтерактивна орбіта чотирьох джерел контенту. Стрілки вліво і вправо перемикають джерела.">
 <div class="orbit-ring" id="orbitRing">
-<a class="orbit-panel panel-materials" href="#/materials" style="--i:0" data-orbit="0"><span class="panel-index">01 / CONTENT</span><span class="panel-mark">✍</span><strong>Матеріали</strong><small>Ідеї, чернетки, редактура</small><span class="panel-link">Відкрити ↗</span></a>
-<a class="orbit-panel panel-sources" href="#/sources" style="--i:1" data-orbit="1"><span class="panel-index">02 / SIGNAL</span><span class="panel-mark">◎</span><strong>Джерела</strong><small>Потоки й походження даних</small><span class="panel-link">Відкрити ↗</span></a>
-<a class="orbit-panel panel-ai" href="#/ai" style="--i:2" data-orbit="2"><span class="panel-index">03 / SYNTHESIS</span><span class="panel-mark">✦</span><strong>AI-студія</strong><small>Безпечна симуляція</small><span class="panel-link">Відкрити ↗</span></a>
-<a class="orbit-panel panel-publish" href="#/publications" style="--i:3" data-orbit="3"><span class="panel-index">04 / OUTPUT</span><span class="panel-mark">↗</span><strong>Публікації</strong><small>Черга, результати, журнал</small><span class="panel-link">Відкрити ↗</span></a>
-<a class="orbit-panel panel-dest" href="#/destinations" style="--i:4" data-orbit="4"><span class="panel-index">05 / ROUTING</span><span class="panel-mark">⌘</span><strong>Канали</strong><small>Сайт та соціальні мережі</small><span class="panel-link">Відкрити ↗</span></a>
-<a class="orbit-panel panel-new" href="#/new" style="--i:5" data-orbit="5"><span class="panel-index">06 / CREATE</span><span class="panel-mark">＋</span><strong>Нова ідея</strong><small>Створити чернетку</small><span class="panel-link">Створити ↗</span></a>
+<a class="orbit-panel panel-materials" href="#/new?source=manual" data-orbit="0" data-source="manual"><span class="panel-index">01 / MANUAL</span><span class="panel-mark">✎</span><strong>Ручне створення</strong><small>Власний текст для сайту та соцмереж</small><span class="panel-link">Створити матеріал ↗</span></a>
+<a class="orbit-panel panel-sources" href="#/new?source=facebook" data-orbit="1" data-source="facebook"><span class="panel-index">02 / FACEBOOK</span><span class="panel-mark">f</span><strong>Facebook</strong><small>Ручна чернетка · без імпорту з мережі</small><span class="panel-link">Створити матеріал ↗</span></a>
+<a class="orbit-panel panel-ai" href="#/new?source=instagram" data-orbit="2" data-source="instagram"><span class="panel-index">03 / INSTAGRAM</span><span class="panel-mark">◎</span><strong>Instagram</strong><small>Підпис та історія · без імпорту з мережі</small><span class="panel-link">Створити матеріал ↗</span></a>
+<a class="orbit-panel panel-publish" href="#/new?source=ai" data-orbit="3" data-source="ai"><span class="panel-index">04 / AI STUDIO</span><span class="panel-mark">✦</span><strong>AI Generator</strong><small>Навчальний пресет · без зовнішніх API</small><span class="panel-link">Створити матеріал ↗</span></a>
 </div>
 <div class="orbit-center" aria-hidden="true"><span>✦</span><strong>CONTENT<br>FLOW</strong></div>
 </div>
-<div class="orbit-bottom"><div class="orbit-hint"><span class="orbit-hint-line" aria-hidden="true"></span> ПЕРЕТЯГНИ · ГОРТАЙ · ВИБИРАЙ</div>
-<div class="orbit-controls"><button type="button" id="orbitPrev" aria-label="Повернути орбіту вліво">←</button><span id="orbitCounter" aria-live="polite">01 / 06</span><button type="button" id="orbitNext" aria-label="Повернути орбіту вправо">→</button><button type="button" id="orbitGlass" aria-pressed="true" title="Перемкнути прозорість">GLASS: ON</button></div></div>
+<div class="orbit-bottom"><div class="orbit-hint"><span class="orbit-hint-line" aria-hidden="true"></span> ОБЕРТАЙ · ОБИРАЙ ДЖЕРЕЛО · СТВОРЮЙ</div>
+<div class="orbit-controls"><button type="button" id="orbitPrev" aria-label="Повернути орбіту вліво">←</button><span id="orbitCounter" aria-live="polite">01 / 04</span><button type="button" id="orbitNext" aria-label="Повернути орбіту вправо">→</button><button type="button" id="orbitGlass" aria-pressed="true" title="Перемкнути прозорість">GLASS: ON</button></div></div>
 </section>
 <div class="orbital-work-label"><span>EDITORIAL WORKSPACE</span><span>LOCAL STATE / REAL INTERACTION</span></div>
 <div id="app" aria-live="polite"></div>
