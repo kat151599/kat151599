@@ -1,6 +1,6 @@
 ClientCircuit - browser-only modified Vikunja Vue frontend.
 Vikunja frontend license: AGPL-3.0-or-later; full text in LICENSE.
-Corresponding modified frontend source: Vikunja-frontend-corresponding-source-f43d83ce-MAS13.zip
+Corresponding modified frontend source: Vikunja-frontend-corresponding-source-f43d83ce-MAS14.zip
 Unmodified baseline repository revision: f43d83ce9e5f47dd2759488cccf49740382c3545
 MAS02 source overlay: src/views/Home.vue and src/components/home/MasonryLanding.vue.
 MAS05 sidebarless demo shell: src/components/home/ContentAuth.vue and src/components/home/AppHeader.vue.
@@ -11,7 +11,8 @@ MAS10 darkens only the demo canvas with #010F1F midnight-blue diffuse light and 
 MAS11 adds permission-filtered homepage navigation in Home.vue and MasonryLanding.vue; public demo Mailbox remains unavailable because private message routes are guarded.
 MAS12 moves the workspace hero and navigation into persistent ContentAuth.vue, outside the original RouterView; Home.vue only renders the Overview panel.
 MAS13 supports fictional private-note CRUD in browser-only additionalRoutes.ts and reserves a responsive minimum lower workspace height in ContentAuth.vue.
-Complete distributed source archive SHA256: E33CEC972D4B578AC7A971219C864C039433720F878D09212DF9D0123E82D8E3
+MAS14 limits viewport scrolling on in-workspace routes and disables scroll-anchor selection inside swappable module content for the DEMO only.
+Complete distributed source archive SHA256: 79E346E011905A437F52CBACF5314915BEDF068CC8FA3F6B961ECFAE49FB8A09
 Call Center adapts Open Cold Dialer; original licenses and notices apply.
 Third-party packages retain their own licenses.
 Demo is fictional and browser-local: no real calls, mail or production APIs.
