@@ -1,6 +1,6 @@
 ClientCircuit - browser-only modified Vikunja Vue frontend.
 Vikunja frontend license: AGPL-3.0-or-later; full text in LICENSE.
-Corresponding modified frontend source: Vikunja-frontend-corresponding-source-f43d83ce-MAS16.zip
+Corresponding modified frontend source: Vikunja-frontend-corresponding-source-f43d83ce-MAS17R3.zip
 Unmodified baseline repository revision: f43d83ce9e5f47dd2759488cccf49740382c3545
 MAS02 source overlay: src/views/Home.vue and src/components/home/MasonryLanding.vue.
 MAS05 sidebarless demo shell: src/components/home/ContentAuth.vue and src/components/home/AppHeader.vue.
@@ -14,7 +14,9 @@ MAS13 supports fictional private-note CRUD in browser-only additionalRoutes.ts a
 MAS14 limits viewport scrolling on in-workspace routes and disables scroll-anchor selection inside swappable module content for the DEMO only.
 MAS15 replaces the public Mailbox placeholder with original-inspired three-column local fictional inbox, outbox, previews and composing UI in ContentAuth.vue; protected /mailbox and its real APIs remain blocked.
 MAS16 changes only header and subtitle colors for Personal, Overview, Mailbox, Wialon, Call Center and Projects on the midnight canvas; pale cards and actions stay unchanged.
-Complete distributed source archive SHA256: A365522895671E790B7012192FD17F6D3E360BAD30948A89B8A023344A835A6A
+MAS17 applies one reusable visual header CSS contract to Gallery, Personal, Overview, Mailbox, Time Tracking, Wialon, Call Center and Projects. Native actions/routes/data remain unchanged; Time gets a small template heading.
+MAS17R3 corrects the predicate to the ACTUAL .mas12-workspace-body ancestor of routed Personal. The .mas12-workspace-shell navigation is a SIBLING, making the previous predicate impossible; real demo AddTask now uses focus({preventScroll:true}) while non-demo retains original focus.
+Complete distributed source archive SHA256: 4102C492B33434D8D42B738C9B3072921E4A41AB35C46B075023D25A9AACCB30
 Call Center adapts Open Cold Dialer; original licenses and notices apply.
 Third-party packages retain their own licenses.
 Demo is fictional and browser-local: no real calls, mail or production APIs.
