@@ -1,0 +1,1 @@
+import{st as e}from"./router-DC54uVqA.js";import{t}from"./abstractService-C_JaZC2p.js";var n=class extends t{constructor(){super({get:`/projects/{projectId}/views/{id}`,getAll:`/projects/{projectId}/views`,create:`/projects/{projectId}/views`,update:`/projects/{projectId}/views/{id}`,delete:`/projects/{projectId}/views/{id}`})}modelFactory(t){return new e(t)}};export{n as t};
