@@ -1,6 +1,6 @@
 ClientCircuit - browser-only modified Vikunja Vue frontend.
 Vikunja frontend license: AGPL-3.0-or-later; full text in LICENSE.
-Corresponding modified frontend source: Vikunja-frontend-corresponding-source-f43d83ce-MAS10.zip
+Corresponding modified frontend source: Vikunja-frontend-corresponding-source-f43d83ce-MAS11.zip
 Unmodified baseline repository revision: f43d83ce9e5f47dd2759488cccf49740382c3545
 MAS02 source overlay: src/views/Home.vue and src/components/home/MasonryLanding.vue.
 MAS05 sidebarless demo shell: src/components/home/ContentAuth.vue and src/components/home/AppHeader.vue.
@@ -8,7 +8,8 @@ MAS06 compact cohesive Masonry and persistent workspace header with beneath-head
 MAS08 returns to preferred MAS06 composition and applies owner's five-stop ocean palette to src/components/home/MasonryLanding.vue and src/styles/portfolio-sky.scss.
 MAS09 added the owner-selected bottom-left #A0C6F5 to top-right #52769C gradient in src/styles/portfolio-sky.scss (superseded by MAS10).
 MAS10 darkens only the demo canvas with #010F1F midnight-blue diffuse light and fixes exposed home section headings in src/styles/portfolio-sky.scss.
-Complete distributed source archive SHA256: 36C985927F6B97A583F32AA50536CAFD27274924A02E4E7B2058D90017E4E437
+MAS11 adds permission-filtered homepage navigation in Home.vue and MasonryLanding.vue; public demo Mailbox remains a local unavailable notice because private message routes are blocked by the original router.
+Complete distributed source archive SHA256: 80B608D624C8D0DB943FA8B23AA9207D2EC24FF68CF375D3D465E590FB84B4E6
 Call Center adapts Open Cold Dialer; original licenses and notices apply.
 Third-party packages retain their own licenses.
 Demo is fictional and browser-local: no real calls, mail or production APIs.
