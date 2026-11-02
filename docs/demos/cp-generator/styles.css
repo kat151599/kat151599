@@ -348,3 +348,170 @@
   .mini-finance-theme .mini-finance-steps {padding:15px 18px}
   .mini-finance-theme .mini-finance-hero h2 {font-size:29px}
 }
+
+/* MAS23B: complete nine-section synthetic workflow. Inspired by Mini Finance,
+   keeps its white/coral/mint/aqua identity. Legacy calculator stays accessible
+   in an explicitly named disclosure; not removed and not falsely relabelled. */
+.mini-finance-theme #full-demo-mount{margin:0 0 22px;min-width:0}
+.mini-finance-theme .full-loading{background:#fff;padding:20px;border-radius:15px}
+.mini-finance-theme .full-toolbar{
+  display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;
+  gap:15px;padding:20px 22px;background:#fff;border:1px solid #e5ecef;
+  border-radius:15px;margin-bottom:16px;
+}
+.mini-finance-theme .full-toolbar h2{font-size:21px;margin:5px 0;color:#263d4c}
+.mini-finance-theme .full-toolbar p{color:#667f87;font-size:12px;margin:2px 0 0}
+.mini-finance-theme .full-toolbar-actions{display:flex;flex-wrap:wrap;gap:9px}
+.mini-finance-theme .full-toolbar .full-action{
+  border:1px solid #d5e4e7;border-radius:10px;padding:10px 13px;
+  background:white;color:#295263;font-weight:750;cursor:pointer;
+}
+.mini-finance-theme .full-toolbar .full-action.primary{
+  color:white;background:#e7354e;border-color:#e7354e;
+}
+.mini-finance-theme .full-toolbar .full-action:focus-visible,
+.mini-finance-theme .full-section :is(input,select,button):focus-visible{
+  outline:3px solid #5ec5d4;outline-offset:2px;
+}
+.mini-finance-theme .full-state{
+  border:1px solid #c3e3e2;border-radius:10px;color:#225f66;
+  background:#eff9f7;padding:10px 14px;font-size:12px;
+  margin:0 0 16px;
+}
+.mini-finance-theme .full-state.error{
+  background:#fff2f3;color:#a8293d;border-color:#edc9cf;
+}
+.mini-finance-theme .full-layout{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px;
+}
+.mini-finance-theme .full-section{
+  min-width:0;background:#fff;border:1px solid #e4ecef;border-radius:16px;
+  padding:21px 21px 24px;box-shadow:0 5px 18px #17283807;
+}
+.mini-finance-theme .full-section.full-span{grid-column:1/-1}
+.mini-finance-theme .full-title{
+  display:flex;align-items:baseline;justify-content:space-between;gap:10px;
+  border-bottom:1px solid #eaf0f3;padding-bottom:13px;margin-bottom:16px;
+}
+.mini-finance-theme .full-title>div{display:flex;align-items:center;gap:10px}
+.mini-finance-theme .full-num{
+  display:inline-flex;justify-content:center;align-items:center;
+  width:35px;height:35px;border-radius:11px;font-size:12px;font-weight:850;
+  background:#ffedf0;color:#ce304a;flex:none;
+}
+.mini-finance-theme .full-title h3{
+  font-size:17px;letter-spacing:-.03em;margin:0;color:#2e4759;
+}
+.mini-finance-theme .full-title>small{
+  font-size:10px;color:#7b9299;white-space:nowrap;
+}
+.mini-finance-theme .full-fields{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;
+}
+.mini-finance-theme .full-fields.full-three{grid-template-columns:repeat(3,minmax(0,1fr))}
+.mini-finance-theme .full-fields label{
+  color:#4e6372;font-size:11px;font-weight:650;display:flex;
+  flex-direction:column;gap:6px;min-width:0;
+}
+.mini-finance-theme .full-fields input,
+.mini-finance-theme .full-fields select,
+.mini-finance-theme .full-row :is(input,select){
+  box-sizing:border-box;min-width:0;width:100%;border:1px solid #dce6e9;
+  border-radius:9px;background:#f9fbfc;color:#2b4453;padding:10px 11px;
+  font-size:13px;height:42px;
+}
+.mini-finance-theme .full-fields input:focus,
+.mini-finance-theme .full-row :is(input,select):focus{
+  border-color:#8ec8cb;outline:2px solid #d8f4f1;outline-offset:0;
+}
+.mini-finance-theme .full-span-note{
+  color:#7d929e;font-size:11px;margin:12px 0 0;line-height:1.5;
+}
+.mini-finance-theme .full-toggles{display:flex;gap:8px;margin:0 0 13px;flex-wrap:wrap}
+.mini-finance-theme .full-toggles button{
+  background:#f6f9fa;color:#42657a;border:1px solid #dee8ec;
+  border-radius:9px;padding:9px 13px;cursor:pointer;font-weight:700;
+}
+.mini-finance-theme .full-toggles button[aria-pressed="true"]{
+  background:#e9354e;color:#fff;border-color:#e9354e;
+}
+.mini-finance-theme .full-monthly{margin-top:13px}
+.mini-finance-theme .full-rows{display:grid;gap:9px}
+.mini-finance-theme .full-row{
+  display:grid;grid-template-columns:minmax(0,2fr) minmax(84px,.65fr) auto;
+  align-items:center;gap:9px;padding:10px;background:#f5f9fa;border-radius:11px;
+}
+.mini-finance-theme .full-row.cost-row{grid-template-columns:minmax(0,2fr) minmax(90px,.8fr) auto}
+.mini-finance-theme .full-row button{
+  min-width:36px;min-height:40px;background:#fff1f3;color:#ba3045;
+  border:1px solid #f4d6da;border-radius:9px;cursor:pointer;font-weight:750;
+}
+.mini-finance-theme .full-add{
+  display:inline-block;margin-top:11px;border:1px solid #9acccf;
+  color:#23717a;background:#ebf9f8;padding:9px 13px;border-radius:10px;
+  font-weight:750;cursor:pointer;
+}
+.mini-finance-theme .full-result-grid{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;
+}
+.mini-finance-theme .full-metric{
+  border-radius:12px;background:#f5f9f9;border-left:3px solid #87cad0;
+  padding:15px 13px;min-width:0;
+}
+.mini-finance-theme .full-metric:nth-child(3n+1){
+  border-left-color:#ef475f;
+}
+.mini-finance-theme .full-metric small{
+  display:block;color:#69818e;font-size:11px;margin-bottom:6px;
+}
+.mini-finance-theme .full-metric strong{
+  display:block;color:#253e55;overflow-wrap:anywhere;
+  font-size:clamp(14px,1.45vw,20px);
+}
+.mini-finance-theme .full-bom{overflow-x:auto;margin-top:17px;border-radius:9px}
+.mini-finance-theme .full-bom table{border-collapse:collapse;width:100%;min-width:480px}
+.mini-finance-theme .full-bom th,.mini-finance-theme .full-bom td{
+  padding:10px 9px;border-bottom:1px solid #e6ebed;
+  color:#456075;font-size:12px;text-align:left;
+}
+.mini-finance-theme .full-bom th{color:#738994;background:#f6f9fa}
+.mini-finance-theme .full-bom tfoot td{font-weight:800;color:#1f475a}
+.mini-finance-theme .full-legacy{
+  border:1px dashed #b9cdd2;background:#f6f9fa;border-radius:13px;
+  margin-top:19px;padding:13px 15px;
+}
+.mini-finance-theme .full-legacy>summary{
+  color:#587888;font-size:12px;font-weight:750;cursor:pointer;
+}
+.mini-finance-theme .full-legacy>.form-grid{margin-top:16px}
+.mini-finance-theme .full-legacy .card{background:#fff}
+@media(max-width:1020px){
+  .mini-finance-theme .full-layout{grid-template-columns:1fr}
+  .mini-finance-theme .full-result-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:620px){
+  .mini-finance-theme .full-toolbar{padding:15px}
+  .mini-finance-theme .full-toolbar-actions{width:100%;display:flex}
+  .mini-finance-theme .full-toolbar .full-action{flex:1;min-width:110px}
+  .mini-finance-theme .full-section{padding:17px 14px}
+  .mini-finance-theme .full-fields,
+  .mini-finance-theme .full-fields.full-three{grid-template-columns:1fr}
+  .mini-finance-theme .full-monthly{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .mini-finance-theme .full-result-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .mini-finance-theme .full-row,.mini-finance-theme .full-row.cost-row{
+    grid-template-columns:minmax(0,1fr) 76px auto;
+    gap:5px;padding:7px;
+  }
+  .mini-finance-theme .full-row :is(input,select){padding:8px 5px;font-size:11px}
+  .mini-finance-theme .full-row button{min-width:31px}
+  .mini-finance-theme .full-title{align-items:center}
+  .mini-finance-theme .full-title>small{white-space:normal;text-align:right}
+}
+
+/* Explicit hidden takes precedence over the author layout display:grid. */
+.mini-finance-theme #full-annual[hidden],
+.mini-finance-theme #full-monthly[hidden]{display:none}
+.mini-finance-theme .full-legacy-actions{
+  justify-content:flex-start;display:flex;flex-wrap:wrap;
+  padding:15px 0 10px;
+}

@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="uk"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#10392c"><title>Solar Demo · Генератор КП</title>
-<link rel="stylesheet" href="styles.css?v=mas22r2-natural-order"><script src="app.js" defer></script></head>
+<link rel="stylesheet" href="styles.css?v=mas23b-nine-sections"><script src="app.js" defer></script><script src="proposal-workspace.mjs?v=mas23b-nine-sections" type="module"></script></head>
 <body class="mini-finance-theme">
 <div class="banner"><span>☀ SOLAR DEMO · НЕЗАЛЕЖНИЙ НАВЧАЛЬНИЙ СИМУЛЯТОР · ВИГАДАНІ ДАНІ</span>
 <div class="banner-links"><a target="_top" href="../../index.html">⌂ Домой</a><a target="_top" href="../../projects/proposal-builder.html">Про проєкт ↗</a><button id="reset" type="button">Скинути демо ↻</button></div></div>
@@ -31,6 +31,8 @@
   <div class="mini-finance-step"><span>03</span><div><strong>Документ</strong><small>Зберегти та переглянути HTML</small></div></div>
  </aside>
 </div>
+<div id="full-demo-mount" aria-label="Повний демонстраційний генератор КП"><p class="full-loading">Завантаження повної навчальної моделі...</p></div>
+<details id="legacyCalculator" class="full-legacy"><summary>Попередній навчальний калькулятор — відкрити стару форму (00–05)</summary>
 <div class="form-grid">
 <article class="card span"><div class="card-head"><div><small>00</small><h2>Валюта</h2><p>Фіксований умовний курс, без запитів до банку.</p></div><span class="tag">DEMO RATES</span></div>
 <div class="fields triple"><label>Валюта цін<select id="currency"><option value="USD">USD</option><option value="UAH">UAH</option><option value="EUR">EUR</option></select></label>
@@ -58,7 +60,7 @@
 <label>Дизайн<select id="theme"><option value="mint">Solar Light</option><option value="navy">Deep Navy</option></select></label></div></article>
 <article class="card span result-card"><div class="card-head"><div><small>05</small><h2>Результат симуляції</h2><p>Автоматичне оновлення при зміні параметрів.</p></div><span class="tag">LIVE</span></div>
 <div class="results"><div><small>Потужність</small><strong id="power">—</strong></div><div><small>Генерація/рік</small><strong id="generation">—</strong></div><div><small>Ємність батарей</small><strong id="storage">—</strong></div><div><small>Вартість проєкту</small><strong id="cost">—</strong></div><div><small>Умовна економія/рік</small><strong id="benefit">—</strong></div><div><small>Умовна окупність</small><strong id="payback">—</strong></div></div></article>
-</div></section>
+</div></details></section>
 <section id="view-settings" class="view"><article class="card"><h2>Вигаданий каталог обладнання</h2><p>Жодних реальних комерційних прайсів чи таблиць регіональної генерації.</p><div class="catalog" id="catalog"></div></article><article class="card"><h2>Налаштування симулятора</h2><div class="fields triple"><label>Умовна чинність КП (днів)<input id="validDays" type="number" min="1" max="365" value="14"></label><label>Префікс номера<input id="prefix" maxlength="12" value="DEMO"></label></div><p>Дані браузера можна скинути кнопкою зверху.</p></article></section>
 <section id="view-designs" class="view"><article class="card"><h2>HTML-дизайни</h2><p>Обидва шаблони незалежно створені для демонстрації. Виконання довільних завантажених шаблонів вимкнено.</p><div class="designs"><article><div class="swatch light"><b>Solar Light</b><small>DEMO PROPOSAL</small></div><h3>Solar Light</h3><button class="btn secondary" type="button" data-pick="mint">Обрати дизайн</button></article><article><div class="swatch dark"><b>Deep Navy</b><small>DEMO PROPOSAL</small></div><h3>Deep Navy</h3><button class="btn secondary" type="button" data-pick="navy">Обрати дизайн</button></article></div></article></section>
 <section id="view-codes" class="view"><article class="card"><h2>Приклад схеми даних</h2><p>Умовні назви полів, які описують демодокумент. Не є API робочого застосунку.</p><table><tr><th>Поле</th><th>Призначення</th></tr><tr><td><code>demo.client</code></td><td>Назва клієнта</td></tr><tr><td><code>demo.powerKw</code></td><td>Потужність</td></tr><tr><td><code>demo.annualKwh</code></td><td>Умовна генерація</td></tr><tr><td><code>demo.totalCost</code></td><td>Вартість</td></tr></table></article></section>
