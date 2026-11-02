@@ -6,3 +6,313 @@
 .view{display:none;margin-top:17px}.view.active{display:block}.form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}.span{grid-column:1/-1}.card{background:var(--card);padding:23px;border:1px solid var(--line);border-radius:16px;box-shadow:0 10px 30px #10391b0a;min-width:0}.view>.card+.card{margin-top:17px}.card-head{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;flex-wrap:wrap;margin-bottom:17px}.card h2{font-size:20px;line-height:1.3;margin:4px 0;letter-spacing:-.02em}.card h3{margin:13px 0 5px}.tag{display:inline-block;background:#e4f8e9;border-radius:30px;color:#318150;font-size:10px;font-weight:900;padding:7px 12px}.fields{display:grid;gap:13px}.fields.triple{grid-template-columns:repeat(3,minmax(0,1fr))}.fields.quad{grid-template-columns:repeat(4,minmax(0,1fr))}.fields label{display:grid;gap:6px;font-size:12px;font-weight:650;color:#476955;min-width:0}.fields input,.fields select{min-width:0;width:100%;background:#fafffb;color:#1a4b31;border:1px solid #cbded2;border-radius:9px;min-height:42px;padding:10px 12px}.result-card{background:linear-gradient(145deg,#fff,#f1fff4)}.results{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:11px}.results>div{padding:16px;border:1px solid #cae6d5;border-radius:11px;background:#fff;min-width:0}.results small,.results strong{display:block}.results small{color:#718779;font-size:12px}.results strong{font-size:clamp(17px,1.9vw,24px);color:#225d3c;overflow-wrap:anywhere;margin-top:7px}.catalog{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:19px}.catalog article{border:1px solid #d4e7da;border-radius:11px;background:#f9fcf9;padding:16px}.catalog article strong,.catalog article small{display:block}.catalog small{color:var(--muted)}.designs{display:grid;grid-template-columns:1fr 1fr;gap:17px;margin-top:21px}.designs article{border:1px solid #d9e8dc;border-radius:12px;padding:15px}.swatch{height:155px;border-radius:10px;padding:25px;display:flex;flex-direction:column;gap:10px}.swatch b{font-size:27px}.swatch small{letter-spacing:.18em;font-weight:800}.swatch.light{background:linear-gradient(140deg,#deffe7,#fff);color:#225c39}.swatch.dark{background:linear-gradient(140deg,#0c2538,#345a72);color:#fff}table{border-collapse:collapse;width:100%}td,th{text-align:left;padding:12px;border-bottom:1px solid #dfece3}th{color:#668273;font-size:12px}code{padding:3px 7px;border-radius:6px;background:#e7f5e9;color:#1f6744}.history-item{display:flex;justify-content:space-between;align-items:center;gap:18px;padding:15px;border:1px solid #d5e5d9;background:#fafffa;border-radius:11px;margin-top:10px}.history-item strong,.history-item small{display:block}.history-item small{font-size:11px;color:var(--muted)}.history-item>div:last-child{display:flex;gap:7px;flex-wrap:wrap}.history-item button{padding:8px 11px;font-size:11px}
 .modal[hidden]{display:none}.modal{position:fixed;inset:0;background:#081c13d9;z-index:80;padding:18px;display:grid;place-items:center}.dialog{width:min(1050px,100%);height:min(94vh,1050px);display:flex;flex-direction:column;border-radius:14px;overflow:hidden;background:white}.dialog header{display:flex;align-items:center;justify-content:space-between;gap:15px;flex-wrap:wrap;background:#e9f8ee;border-bottom:1px solid #c8e3d0;padding:16px 19px}.dialog header strong,.dialog header small{display:block}.dialog header small{color:#5a7764;font-size:11px}.dialog iframe{flex:1;border:0;background:white;width:100%}
 @media(max-width:1180px){.fields.quad{grid-template-columns:repeat(2,minmax(0,1fr))}.results{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:790px){.shell{grid-template-columns:190px minmax(0,1fr)}.sidebar{padding:18px 10px}.main{padding:20px 15px}.form-grid{grid-template-columns:1fr}.fields.triple{grid-template-columns:1fr 1fr}.top{flex-wrap:wrap}}@media(max-width:600px){.shell{display:block}.sidebar{height:auto;min-height:0;position:static}.sidebar nav{display:flex;overflow:auto}.sidebar nav button{white-space:nowrap}.sidebar-note{display:none}.brand{padding-bottom:14px}.fields.quad,.fields.triple,.results,.catalog,.designs{grid-template-columns:1fr}.card{padding:17px}.history-item{flex-direction:column;align-items:flex-start}.top .actions{width:100%}}
+
+/* MAS22 — original independent visual adaptation inspired by Tooplate
+   Mini Finance 2135. No vendor bundles, scripts, or fonts are copied.
+   Existing app IDs/functional widgets and fictitious calculations remain.
+   Template reference: https://www.tooplate.com/view/2135-mini-finance */
+.mini-finance-theme{
+  --bg:#edf0f2;--ink:#253749;--muted:#72808c;--line:#e7ebed;
+  --card:#fff;--red:#eb344b;--red-deep:#cb233c;--sea:#94d5d8;
+  --pale:#f5faf4;
+  background:#edf0f2;color:var(--ink);
+  font-family:"Segoe UI",system-ui,-apple-system,Arial,sans-serif;
+}
+.mini-finance-theme .banner{
+  min-height:48px;background:#13222c;color:#d5e5ea;padding:9px 22px;
+  letter-spacing:.055em;border-bottom:1px solid #233740;
+  box-shadow:0 2px 9px #0a192014;
+}
+.mini-finance-theme .banner-links a,
+.mini-finance-theme .banner-links button{
+  background:#fff;color:#263b48;border:1px solid #dce5e9;
+  padding:7px 13px;border-radius:9px;
+}
+.mini-finance-theme .banner-links a:hover,
+.mini-finance-theme .banner-links button:hover{background:#eefafb;color:#bc2940}
+.mini-finance-theme .shell{
+  grid-template-columns:242px minmax(0,1fr);min-height:calc(100dvh - 48px);
+  align-items:start;
+}
+.mini-finance-theme .sidebar{
+  background:#fff;color:#2b3c4a;border-right:1px solid #e1e7ea;
+  box-shadow:4px 0 30px #16243c06;padding:27px 14px 24px;
+}
+.mini-finance-theme .brand{
+  padding:0 9px 28px;gap:11px;border-bottom:1px solid #edf0f3;
+  margin-bottom:18px;
+}
+.mini-finance-theme .brand i{
+  background:#ffe9ed;color:var(--red);border-radius:12px;
+  width:45px;height:45px;box-shadow:inset 0 0 0 1px #ffd3dc;
+}
+.mini-finance-theme .brand strong{
+  font-size:18px;letter-spacing:-.04em;color:#1c2c39;
+}
+.mini-finance-theme .brand small{color:#84939d;font-size:11px}
+.mini-finance-theme .sidebar nav{gap:4px}
+.mini-finance-theme .sidebar nav button{
+  color:#6b7580;background:transparent;border-color:transparent;
+  border-radius:10px;font-size:13px;padding:13px 12px 13px 43px;
+  position:relative;font-weight:650;line-height:1.25;
+}
+.mini-finance-theme .sidebar nav button::before{
+  content:'▦';position:absolute;left:15px;top:50%;
+  transform:translateY(-50%);font-size:16px;line-height:1;color:#7f919b;
+}
+.mini-finance-theme .sidebar nav button:nth-child(2)::before{content:'⚙'}
+.mini-finance-theme .sidebar nav button:nth-child(3)::before{content:'▤'}
+.mini-finance-theme .sidebar nav button:nth-child(4)::before{content:'⌘'}
+.mini-finance-theme .sidebar nav button:nth-child(5)::before{content:'◷'}
+.mini-finance-theme .sidebar nav button[aria-current]{
+  background:linear-gradient(110deg,#f44b5c,#e62d48);
+  color:#fff;border-color:transparent;box-shadow:0 9px 18px #e6385130;
+}
+.mini-finance-theme .sidebar nav button[aria-current]::before{color:#fff}
+.mini-finance-theme .sidebar nav button:not([aria-current]):hover{
+  color:#df3048;background:#fff0f2;border-color:#ffe3e7;
+}
+.mini-finance-theme .sidebar-note{
+  color:#557787;background:linear-gradient(145deg,#eaf6f5,#e8f4f6);
+  padding:20px 15px;margin:27px 0 0;border:0;border-radius:16px;
+}
+.mini-finance-theme .sidebar-note strong{
+  display:inline-block;color:#1e6672;letter-spacing:.13em;font-size:11px;
+}
+.mini-finance-theme .sidebar-note p{margin:9px 0 0;line-height:1.65}
+.mini-finance-theme .main{padding:33px clamp(18px,3vw,48px) 42px;min-width:0}
+.mini-finance-theme .top{
+  margin:0 0 18px;align-items:center;gap:16px;
+}
+.mini-finance-theme .top h1{
+  color:#233545;font-size:clamp(27px,3vw,38px);font-weight:760;
+  letter-spacing:-.04em;margin:4px 0 1px;
+}
+.mini-finance-theme .top p{font-size:13px;color:#7b8a94}
+.mini-finance-theme .eyebrow,.mini-finance-theme .card-head small{
+  color:#e73850;letter-spacing:.12em;
+}
+.mini-finance-theme .btn{
+  border-radius:11px;font-weight:750;
+  border-color:#dbe6e8;color:#345764;background:#fff;
+  padding:11px 15px;box-shadow:0 2px 7px #19324209;
+}
+.mini-finance-theme .btn.primary{
+  background:#ec364c;border-color:#ec364c;color:#fff;
+  box-shadow:0 9px 19px #eb344b26;
+}
+.mini-finance-theme .btn.secondary{
+  background:#fff;color:#314956;border-color:#dfe6e8;
+}
+.mini-finance-theme .btn:hover{filter:brightness(.97)}
+.mini-finance-theme .alert{
+  background:#fff8ea;border:1px solid #f4e5c5;border-left:4px solid #e6ab39;
+  padding:13px 16px;color:#79664a;border-radius:11px;
+}
+.mini-finance-theme .alert b{color:#75512d}
+.mini-finance-theme .message:not(:empty){
+  background:#fff;color:#286b6f;border:1px solid #cae8e6;
+}
+.mini-finance-theme .message.error{color:#aa2938;background:#fff2f3;border-color:#f6c5cb}
+/* Mini Finance overview: mint balance card, decorative coral/sun disc,
+   aqua process/quick-action panel; every metric below stays live from app.js. */
+.mini-finance-theme .mini-finance-dashboard{
+  display:grid;grid-template-columns:minmax(0,1.55fr) minmax(265px,.88fr);
+  gap:17px;margin:17px 0 19px;
+}
+.mini-finance-theme .mini-finance-hero{
+  min-height:262px;background:linear-gradient(126deg,#f4fbf1,#e7f8ee);
+  border-radius:16px;position:relative;overflow:hidden;
+  border:1px solid #e1eee5;padding:32px 34px;isolation:isolate;
+}
+.mini-finance-theme .mini-finance-hero-copy{position:relative;z-index:2;max-width:415px}
+.mini-finance-theme .mini-finance-kicker{
+  color:#667f85;font-size:10px;font-weight:800;letter-spacing:.14em;
+  display:inline-block;
+}
+.mini-finance-theme .mini-finance-hero h2{
+  color:#20364c;font-size:clamp(29px,3.1vw,43px);line-height:1.11;
+  letter-spacing:-.055em;margin:15px 0 13px;font-weight:800;
+}
+.mini-finance-theme .mini-finance-hero h2 em{
+  color:#de334d;font-style:normal;
+}
+.mini-finance-theme .mini-finance-hero p{
+  color:#637986;line-height:1.6;font-size:12px;max-width:355px;margin:0;
+}
+.mini-finance-theme .mini-finance-hero-badge{
+  display:inline-flex;margin-top:18px;border-radius:20px;padding:7px 12px;
+  color:#227d79;background:#fff;border:1px solid #daece7;font-size:10px;
+  letter-spacing:.08em;font-weight:800;
+}
+.mini-finance-theme .mini-finance-sun-art{
+  width:236px;height:236px;border-radius:50%;position:absolute;right:-57px;
+  top:-62px;background:#f23645;z-index:1;box-shadow:0 16px 45px #e83a4225;
+}
+.mini-finance-theme .mini-finance-sun-core{
+  position:absolute;width:140px;height:140px;background:#ffab00;
+  border-radius:50%;left:53px;top:91px;
+}
+.mini-finance-theme .mini-finance-steps{
+  border-radius:16px;background:#a3dbdd;padding:25px 26px;
+  color:#245462;min-width:0;border:1px solid #91d2d6;
+}
+.mini-finance-theme .mini-finance-steps .mini-finance-kicker{color:#477783}
+.mini-finance-theme .mini-finance-steps h2{
+  margin:8px 0 17px;letter-spacing:-.04em;font-size:24px;color:#245363;
+}
+.mini-finance-theme .mini-finance-step{
+  display:flex;align-items:center;gap:12px;padding:9px 0;
+  border-top:1px solid #6caab233;
+}
+.mini-finance-theme .mini-finance-step>span{
+  width:37px;height:37px;display:grid;place-items:center;flex:none;
+  border-radius:12px;background:#fff9;color:#2b7581;
+  font-size:12px;font-weight:850;
+}
+.mini-finance-theme .mini-finance-step strong,
+.mini-finance-theme .mini-finance-step small{display:block}
+.mini-finance-theme .mini-finance-step strong{font-size:13px}
+.mini-finance-theme .mini-finance-step small{font-size:11px;color:#447584}
+/* Move the existing REAL auto-calculated numbers above the input cards.
+   The six #power/#generation/#storage/#cost/#benefit/#payback IDs stay intact. */
+.mini-finance-theme #view-proposal .form-grid>.result-card{order:-1}
+.mini-finance-theme .card{
+  border-radius:16px;background:#fff;border:1px solid #e6ebed;
+  box-shadow:0 5px 20px #17283806;padding:24px;
+}
+.mini-finance-theme .card h2{font-size:21px;color:#23384b;letter-spacing:-.035em}
+.mini-finance-theme .card h3{color:#2b4155}
+.mini-finance-theme .card p{color:#7a8992;font-size:12px}
+.mini-finance-theme .card-head{margin-bottom:17px}
+.mini-finance-theme .tag{
+  background:#fff0f2;color:#d72d49;border:1px solid #ffdfe5;
+  font-weight:850;border-radius:24px;
+}
+.mini-finance-theme .result-card{
+  background:linear-gradient(125deg,#fff,#f8fffa);
+  border:1px solid #e4edeb;position:relative;
+}
+.mini-finance-theme .result-card .card-head h2{font-size:23px}
+.mini-finance-theme .results{
+  grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;
+}
+.mini-finance-theme .results>div{
+  padding:18px 19px;border:1px solid #ebeff1;border-radius:13px;background:#f6f8f9;
+  border-left:3px solid #73c4c7;
+}
+.mini-finance-theme .results>div:nth-child(4){
+  background:#edf9f6;border-color:#ddede8;border-left-color:#ed364e;
+}
+.mini-finance-theme .results>div:nth-child(5){border-left-color:#e8a627}
+.mini-finance-theme .results>div:nth-child(6){border-left-color:#eb6277}
+.mini-finance-theme .results small{font-size:11px;color:#778a93}
+.mini-finance-theme .results strong{
+  color:#253d55;font-size:clamp(17px,1.9vw,26px);line-height:1.25;
+}
+.mini-finance-theme .fields label{color:#5c6e7c}
+.mini-finance-theme .fields input,
+.mini-finance-theme .fields select{
+  min-height:43px;border:1px solid #dce5e9;border-radius:9px;
+  background:#f9fbfc;color:#263b4f;
+}
+.mini-finance-theme .fields :is(input,select):focus{
+  border-color:#6dbcc1;outline:2px solid #c3edef;outline-offset:1px;
+}
+.mini-finance-theme .catalog article{
+  border-color:#e5ebef;background:#f8fbfb;
+}
+.mini-finance-theme .designs article{border-color:#e1e8ec}
+.mini-finance-theme .swatch.light{background:linear-gradient(135deg,#eaffea,#fff);color:#245b50}
+.mini-finance-theme .swatch.dark{background:linear-gradient(140deg,#17243b,#517487);color:#fff}
+.mini-finance-theme td,.mini-finance-theme th{border-bottom-color:#e6ecf0}
+.mini-finance-theme th{color:#73828b}
+.mini-finance-theme code{background:#eef5f5;color:#287079}
+.mini-finance-theme .history-item{
+  border-color:#e3e9ec;background:#fafcfc;
+}
+.mini-finance-theme .modal{background:#1b2b3ee8}
+.mini-finance-theme .dialog{border-radius:17px}
+.mini-finance-theme .dialog header{
+  background:#f5faf9;border-bottom-color:#e3ebea;
+}
+.mini-finance-theme .dialog header small{color:#687f86}
+.mini-finance-theme .mini-finance-credit{
+  text-align:center;color:#94a0a9;font-size:11px;
+  padding:29px 8px 5px;margin-top:22px;
+}
+.mini-finance-theme .mini-finance-credit a{color:#d84459;text-decoration:none}
+.mini-finance-theme :is(button,a,input,select):focus-visible{
+  outline:3px solid #5ec5d4;outline-offset:3px;
+}
+@media(max-width:1200px){
+  .mini-finance-theme .mini-finance-dashboard{
+    grid-template-columns:minmax(0,1.2fr) minmax(240px,.85fr);
+  }
+  .mini-finance-theme .mini-finance-hero{padding:25px}
+  .mini-finance-theme .results{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:900px){
+  .mini-finance-theme .shell{grid-template-columns:190px minmax(0,1fr)}
+  .mini-finance-theme .sidebar{padding:18px 10px}
+  .mini-finance-theme .mini-finance-dashboard{grid-template-columns:1fr}
+  .mini-finance-theme .mini-finance-hero{min-height:230px}
+  .mini-finance-theme .mini-finance-steps{
+    display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px 13px;
+  }
+  .mini-finance-theme .mini-finance-steps>.mini-finance-kicker,
+  .mini-finance-theme .mini-finance-steps>h2{grid-column:1/-1}
+  .mini-finance-theme .mini-finance-steps h2{margin:0 0 6px}
+  .mini-finance-theme .mini-finance-step{min-width:0}
+}
+@media(max-width:620px){
+  .mini-finance-theme .banner{padding:10px 13px;gap:8px}
+  .mini-finance-theme .banner>span{font-size:9px;line-height:1.45}
+  .mini-finance-theme .shell{display:block}
+  .mini-finance-theme .sidebar{
+    position:static;height:auto;min-height:0;padding:12px 14px;
+    border-bottom:1px solid #e3e9ed;
+  }
+  .mini-finance-theme .brand{margin:0 0 8px;padding:0 0 9px}
+  .mini-finance-theme .sidebar nav{
+    display:flex;overflow-x:auto;gap:7px;scrollbar-width:thin;padding:5px 0;
+  }
+  .mini-finance-theme .sidebar nav button{
+    flex:none;white-space:nowrap;padding:10px 12px 10px 34px;font-size:11px;
+  }
+  .mini-finance-theme .sidebar nav button::before{left:11px;font-size:13px}
+  .mini-finance-theme .sidebar-note{display:none}
+  .mini-finance-theme .main{padding:18px 14px 32px}
+  .mini-finance-theme .top{align-items:flex-start}
+  .mini-finance-theme .top .actions{width:100%;display:grid;grid-template-columns:1fr 1fr}
+  .mini-finance-theme .top .btn{white-space:normal;padding:10px 8px;font-size:11px}
+  .mini-finance-theme .mini-finance-dashboard{gap:11px;margin-top:14px}
+  .mini-finance-theme .mini-finance-hero{min-height:245px;padding:24px 20px}
+  .mini-finance-theme .mini-finance-hero h2{font-size:31px}
+  .mini-finance-theme .mini-finance-hero-copy{max-width:310px}
+  .mini-finance-theme .mini-finance-hero p{max-width:260px}
+  .mini-finance-theme .mini-finance-sun-art{
+    width:150px;height:150px;right:-75px;top:-55px;
+  }
+  .mini-finance-theme .mini-finance-sun-core{width:85px;height:85px;left:31px;top:56px}
+  .mini-finance-theme .mini-finance-steps{display:block;padding:18px 19px}
+  .mini-finance-theme .mini-finance-step{padding:7px 0}
+  .mini-finance-theme .form-grid,.mini-finance-theme .results,
+  .mini-finance-theme .fields.quad,.mini-finance-theme .fields.triple{
+    grid-template-columns:1fr;
+  }
+  .mini-finance-theme .card{padding:18px}
+  .mini-finance-theme .result-card .results{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .mini-finance-theme .results>div{padding:13px 11px}
+  .mini-finance-theme .results strong{font-size:18px}
+  .mini-finance-theme .card-head{gap:7px}
+  .mini-finance-theme .history-item{flex-direction:column;align-items:flex-start}
+  .mini-finance-theme .catalog,.mini-finance-theme .designs{grid-template-columns:1fr}
+  .mini-finance-theme .modal{padding:8px}
+  .mini-finance-theme .dialog{height:min(94dvh,1050px)}
+}
+@media(prefers-reduced-motion:reduce){
+  .mini-finance-theme *, .mini-finance-theme *::before,.mini-finance-theme *::after{
+    scroll-behavior:auto!important;transition-duration:0s!important;
+  }
+}

@@ -2,7 +2,7 @@
 <html lang="uk"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#10392c"><title>Solar Demo · Генератор КП</title>
 <link rel="stylesheet" href="styles.css"><script src="app.js" defer></script></head>
-<body>
+<body class="mini-finance-theme">
 <div class="banner"><span>☀ SOLAR DEMO · НЕЗАЛЕЖНИЙ НАВЧАЛЬНИЙ СИМУЛЯТОР · ВИГАДАНІ ДАНІ</span>
 <div class="banner-links"><a target="_top" href="../../index.html">⌂ Домой</a><a target="_top" href="../../projects/proposal-builder.html">Про проєкт ↗</a><button id="reset" type="button">Скинути демо ↻</button></div></div>
 <div class="shell"><aside class="sidebar"><div class="brand"><i>☀</i><div><strong>Solar Demo</strong><small>Генератор КП</small></div></div>
@@ -12,7 +12,26 @@
 <div class="actions"><button id="save" class="btn secondary" type="button">↓ Зберегти чернетку</button><button id="preview" class="btn primary" type="button">Сформувати HTML ↗</button></div></header>
 <div class="alert"><b>Демонстрація, не інженерний розрахунок.</b> Значення, формули та прайс вигадані спеціально для цього стенда. Це не копія production-алгоритмів і не реальна комерційна пропозиція.</div>
 <p id="message" class="message" aria-live="polite" role="status"></p>
-<section id="view-proposal" class="view active"><div class="form-grid">
+<section id="view-proposal" class="view active">
+<div class="mini-finance-dashboard" aria-label="Огляд навчального проєкту">
+ <div class="mini-finance-hero">
+  <div class="mini-finance-hero-copy">
+   <span class="mini-finance-kicker">SOLAR FINANCE / DEMO WORKSPACE</span>
+   <h2>Сонячна енергія.<br><em>Рішення в цифрах.</em></h2>
+   <p>Від параметрів станції до наочної оцінки бюджету та умовної окупності — в одному робочому просторі.</p>
+   <span class="mini-finance-hero-badge">● ЛОКАЛЬНА СИМУЛЯЦІЯ</span>
+  </div>
+  <div class="mini-finance-sun-art" aria-hidden="true"><span class="mini-finance-sun-core"></span></div>
+ </div>
+ <aside class="mini-finance-steps" aria-label="Етапи створення пропозиції">
+  <span class="mini-finance-kicker">QUICK START / 03 КРОКИ</span>
+  <h2>Від ідеї до КП</h2>
+  <div class="mini-finance-step"><span>01</span><div><strong>Параметри</strong><small>Станція, валюта та клієнт</small></div></div>
+  <div class="mini-finance-step"><span>02</span><div><strong>Результати</strong><small>Автоматична симуляція</small></div></div>
+  <div class="mini-finance-step"><span>03</span><div><strong>Документ</strong><small>Зберегти та переглянути HTML</small></div></div>
+ </aside>
+</div>
+<div class="form-grid">
 <article class="card span"><div class="card-head"><div><small>00</small><h2>Валюта</h2><p>Фіксований умовний курс, без запитів до банку.</p></div><span class="tag">DEMO RATES</span></div>
 <div class="fields triple"><label>Валюта цін<select id="currency"><option value="USD">USD</option><option value="UAH">UAH</option><option value="EUR">EUR</option></select></label>
 <label>Курс до гривні<input id="rate" type="number" min=".01" max="100000" step=".1" value="42"></label>
@@ -44,6 +63,7 @@
 <section id="view-designs" class="view"><article class="card"><h2>HTML-дизайни</h2><p>Обидва шаблони незалежно створені для демонстрації. Виконання довільних завантажених шаблонів вимкнено.</p><div class="designs"><article><div class="swatch light"><b>Solar Light</b><small>DEMO PROPOSAL</small></div><h3>Solar Light</h3><button class="btn secondary" type="button" data-pick="mint">Обрати дизайн</button></article><article><div class="swatch dark"><b>Deep Navy</b><small>DEMO PROPOSAL</small></div><h3>Deep Navy</h3><button class="btn secondary" type="button" data-pick="navy">Обрати дизайн</button></article></div></article></section>
 <section id="view-codes" class="view"><article class="card"><h2>Приклад схеми даних</h2><p>Умовні назви полів, які описують демодокумент. Не є API робочого застосунку.</p><table><tr><th>Поле</th><th>Призначення</th></tr><tr><td><code>demo.client</code></td><td>Назва клієнта</td></tr><tr><td><code>demo.powerKw</code></td><td>Потужність</td></tr><tr><td><code>demo.annualKwh</code></td><td>Умовна генерація</td></tr><tr><td><code>demo.totalCost</code></td><td>Вартість</td></tr></table></article></section>
 <section id="view-history" class="view"><article class="card"><div class="card-head"><div><h2>Збережені пропозиції</h2><p>Дані лише у вашому браузері; імпорт і експорт JSON виконуються локально.</p></div><button id="import" class="btn secondary" type="button">↑ Відкрити чернетку з файлу</button><input id="importFile" type="file" accept=".json,application/json" hidden></div><div id="historyList"></div></article></section>
+<footer class="mini-finance-credit">Оформлення натхненне <a href="https://www.tooplate.com/view/2135-mini-finance" target="_blank" rel="noopener noreferrer">Mini Finance — Tooplate</a>. Усі розрахунки та дані стенда залишаються навчальними.</footer>
 </main></div>
 <div id="modal" class="modal" hidden><div class="dialog" role="dialog" aria-modal="true" aria-labelledby="modalLabel"><header><div><strong id="modalLabel">Демонстраційний HTML-документ</strong><small>Локальний попередній перегляд, без відправлення даних</small></div><div class="actions"><button id="download" class="btn primary" type="button">↓ Завантажити HTML</button><button id="close" class="btn secondary" type="button">Закрити ×</button></div></header><iframe id="frame" sandbox="allow-same-origin allow-modals" title="Перегляд демонстраційної пропозиції"></iframe></div></div>
 </body></html>
