@@ -14,6 +14,7 @@ import {
   DEMO_DISCLAIMER,
   DEMO_SCHEMA_VERSION,
 } from './demo-proposal-model.mjs';
+import { renderFictionalProposalDocument } from './proposal-document.mjs';
 
 const mount = document.getElementById('full-demo-mount');
 if (!mount) throw new Error('MAS23B_FORM_MOUNT_MISSING');
@@ -135,7 +136,7 @@ function layout(){
       '<div '+cols+'>'+input('Номер КП','proposal.number')+
       input('Дата','proposal.date','date')+
       input('Дійсна до','proposal.validUntil','date')+
-      '<label>HTML-шаблон<select disabled aria-label="Шаблон семисторінкового КП"><option>Семисторінковий документ — MAS23C</option></select></label></div>',
+      '<label>HTML-шаблон<select disabled aria-label="Шаблон семисторінкового КП"><option>Навчальна пропозиція · 7 сторінок A4</option></select></label></div>',
       {subtitle:'03 / ВЕРСІЯ ДОКУМЕНТА'}),
     card('04','Енергетичні дані',
       '<div class="full-toggles" aria-label="Режим споживання">'+
@@ -185,8 +186,9 @@ function layout(){
   mount.innerHTML=
     '<div class="full-toolbar"><div><span class="mini-finance-kicker">GTT-STYLE FLOW / 09 РОЗДІЛІВ</span>'+
       '<h2>Повна навчальна модель КП</h2>'+
-      '<p>Поля, обладнання та кошторис пов’язані одним розрахунком. Семисторінковий документ буде додано на наступному етапі.</p></div>'+
-      '<div class="full-toolbar-actions"><button type="button" class="full-action primary" id="full-save">Зберегти локально</button>'+
+      '<p>Поля, обладнання та кошторис пов’язані одним розрахунком. Підготовлено друкований HTML-документ на 7 сторінок A4.</p></div>'+
+      '<div class="full-toolbar-actions"><button type="button" class="full-action primary" id="full-generate">Сформувати КП · 7 сторінок</button>'+
+      '<button type="button" class="full-action" id="full-save">Зберегти локально</button>'+
       '<button type="button" class="full-action" id="full-export">↓ JSON</button>'+
       '<button type="button" class="full-action" id="full-reset">Скинути модель</button></div></div>'+
     '<p class="full-state" id="full-state" role="status" aria-live="polite">'+esc(DEMO_DISCLAIMER)+'</p>'+
@@ -407,6 +409,29 @@ mount.addEventListener('click',event=>{
     }
     return;
   }
+
+  if(b.id==='full-generate'){
+    if(!lastValid){
+      failInvalid('Виправте некоректні параметри перед створенням документа.');
+      return;
+    }
+    try {
+      const html=renderFictionalProposalDocument(lastValid);
+      const modal=ensureDocumentModal();
+      modal.querySelector('#full-document-frame').srcdoc=html;
+      modal.hidden=false;
+      document.body.classList.add('full-document-open');
+      modal.querySelector('#full-document-close').focus();
+      lastDocumentHtml=html;
+      $('full-state').classList.remove('error');
+      $('full-state').textContent='Сформовано професійний семисторінковий навчальний HTML-документ. Збережіть HTML або надрукуйте в PDF.';
+    } catch(error){
+      lastDocumentHtml='';
+      failInvalid('Не вдалося сформувати сім сторінок: '+String(error.message));
+    }
+    return;
+  }
+
   if(b.id==='full-save'){
     if(!lastValid){$('full-state').textContent='Спершу виправте параметри.';return}
     try{
@@ -439,6 +464,58 @@ mount.addEventListener('click',event=>{
     layout();return;
   }
 });
+// MAS23C: separate opt-in seven-page renderer. Never alter the legacy
+// one-page calculator preview and never send proposal data to a server.
+let lastDocumentHtml='';
+let documentModal=null;
+function closeDocumentModal(){
+  if(!documentModal)return;
+  documentModal.hidden=true;
+  document.body.classList.remove('full-document-open');
+  documentModal.querySelector('#full-document-frame').srcdoc='';
+}
+function saveDocument(){
+  if(!lastDocumentHtml)return;
+  const blob=new Blob([lastDocumentHtml],{type:'text/html;charset=utf-8'});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement('a');
+  a.href=url;a.download='Solar-Demo-Seven-Page-Proposal.html';
+  document.body.appendChild(a);a.click();a.remove();
+  setTimeout(()=>URL.revokeObjectURL(url),2000);
+}
+function ensureDocumentModal(){
+  if(documentModal)return documentModal;
+  const wrap=document.createElement('div');
+  wrap.id='full-document-modal';
+  wrap.className='full-document-modal';
+  wrap.hidden=true;
+  wrap.innerHTML=
+    '<div class="full-document-dialog" role="dialog" aria-modal="true" aria-labelledby="full-document-title">'+
+    '<header class="full-document-header">'+
+    '<div><strong id="full-document-title">Навчальна комерційна пропозиція · 7 сторінок A4</strong>'+
+    '<small>Повністю локальний документ, дані вигадані · збереження PDF через друк браузера</small></div>'+
+    '<div class="full-document-actions">'+
+    '<button type="button" id="full-document-download">↓ Завантажити HTML</button>'+
+    '<button type="button" id="full-document-print" class="full-document-print">Друк / PDF</button>'+
+    '<button type="button" id="full-document-close">Закрити ×</button></div></header>'+
+    '<iframe id="full-document-frame" title="Семисторінковий перегляд КП" '+
+    'sandbox="allow-same-origin allow-modals" loading="eager"></iframe>'+
+    '</div>';
+  document.body.appendChild(wrap);
+  wrap.querySelector('#full-document-close').addEventListener('click',closeDocumentModal);
+  wrap.querySelector('#full-document-download').addEventListener('click',saveDocument);
+  wrap.querySelector('#full-document-print').addEventListener('click',()=>{
+    const win=wrap.querySelector('#full-document-frame').contentWindow;
+    if(win){win.focus();win.print();}
+  });
+  wrap.addEventListener('click',event=>{if(event.target===wrap)closeDocumentModal();});
+  document.addEventListener('keydown',event=>{
+    if(event.key==='Escape'&&!wrap.hidden){event.stopPropagation();closeDocumentModal();}
+  });
+  documentModal=wrap;
+  return documentModal;
+}
+
 // New model and legacy calculator share a page. Keep the legacy reset click
 // focused on legacy local drafts; the new form has its own explicit Reset.
 const legacy = document.getElementById('legacyCalculator');

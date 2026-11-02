@@ -515,3 +515,44 @@
   justify-content:flex-start;display:flex;flex-wrap:wrap;
   padding:15px 0 10px;
 }
+
+/* MAS23C / Seven-page A4 viewer, separate from legacy one-page HTML modal. */
+.mini-finance-theme .full-document-modal{
+ position:fixed;inset:0;z-index:10030;background:rgba(8,26,34,.78);
+ padding:15px;display:flex;align-items:center;justify-content:center;
+}
+.mini-finance-theme .full-document-modal[hidden]{display:none}
+body.full-document-open{overflow:hidden}
+.mini-finance-theme .full-document-dialog{
+ width:min(1220px,100%);height:min(92vh,1000px);min-height:400px;
+ border-radius:16px;overflow:hidden;background:#f7fafa;
+ display:flex;flex-direction:column;border:1px solid #bed4d5;
+ box-shadow:0 24px 95px #071b2545;
+}
+.mini-finance-theme .full-document-header{
+ display:flex;align-items:center;justify-content:space-between;
+ gap:10px;padding:12px 17px;background:#fff;border-bottom:1px solid #dae7e7;
+ flex-wrap:wrap;
+}
+.mini-finance-theme .full-document-header strong{font-size:15px;display:block;color:#294959}
+.mini-finance-theme .full-document-header small{font-size:11px;display:block;color:#6b8790;margin-top:4px}
+.mini-finance-theme .full-document-actions{display:flex;gap:7px;flex-wrap:wrap}
+.mini-finance-theme .full-document-actions button{
+ cursor:pointer;border-radius:9px;border:1px solid #d3e2e5;
+ background:white;color:#28546b;font-weight:800;
+ padding:9px 12px;font-size:12px;
+}
+.mini-finance-theme .full-document-actions .full-document-print{
+ background:#e7354e;border-color:#e7354e;color:#fff;
+}
+.mini-finance-theme #full-document-frame{
+ flex:1;min-height:0;width:100%;border:0;background:#e8eeee;
+}
+@media(max-width:620px){
+ .mini-finance-theme .full-document-modal{padding:6px}
+ .mini-finance-theme .full-document-dialog{height:96vh;border-radius:11px}
+ .mini-finance-theme .full-document-header{padding:9px}
+ .mini-finance-theme .full-document-header strong{font-size:12px}
+ .mini-finance-theme .full-document-actions{width:100%}
+ .mini-finance-theme .full-document-actions button{font-size:11px;padding:8px;flex:1}
+}
