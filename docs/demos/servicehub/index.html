@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#f3f5fb">
+<meta name="description" content="ServiceHub — интерактивная безопасная демонстрация управления вымышленными Windows-сервисами и удалёнными узлами.">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'none'; connect-src 'none'; frame-src 'none'; worker-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<title>ServiceHub · Interactive Demo Edition</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="./demo.css?v=sh03-1">
+<script defer src="./demo.js?v=sh03-1"></script>
+</head>
+<body>
+<div class="demo-banner">
+ <span class="banner-heading"><span class="banner-led" aria-hidden="true"></span><b>SERVICEHUB</b><span class="banner-detail">DEMO EDITION · ВЫМЫШЛЕННЫЕ СЕРВИСЫ · ЛОКАЛЬНАЯ СИМУЛЯЦИЯ</span></span>
+ <span class="banner-actions"><a href="../../index.html" target="_top">← Портфолио</a><button id="demo-empty" type="button">Пустая база</button><button id="demo-reset" type="button">↻ Сбросить демо</button></span>
+</div>
+<div class="app-shell">
+ <aside class="sidebar">
+  <div class="brand-row"><span class="brand-icon">S</span><div><strong>ServiceHub</strong><small>source-first / demo</small></div></div>
+  <nav class="nav" aria-label="Навигация">
+   <button type="button" class="nav-button active" data-view="overview"><span>▦</span> Обзор</button>
+   <button type="button" class="nav-button" data-view="services"><span>▤</span> Сервисы</button>
+   <button type="button" class="nav-button" data-view="logs"><span>≡</span> Логи</button>
+   <button type="button" class="nav-button" data-view="statistics"><span>▥</span> Статистика</button>
+   <button type="button" class="nav-button" data-view="settings"><span>⚙</span> Настройки</button>
+  </nav>
+  <div class="sidebar-bottom">
+   <div class="side-usage"><strong>Система <em>DEMO</em></strong>
+    <div class="meter-label"><span>CPU</span><span id="side-cpu">24%</span></div><div class="meter"><i id="side-cpu-bar"></i></div>
+    <div class="meter-label"><span>RAM</span><span id="side-ram">37%</span></div><div class="meter"><i id="side-ram-bar" ></i></div>
+    <div class="meter-label"><span>Диск</span><span>43%</span></div><div class="meter"><i ></i></div>
+   </div>
+   <div class="sidebar-location"><span class="green-dot" aria-hidden="true"></span> Локальный сервер · SIM</div>
+  </div>
+ </aside>
+ <div class="main-column">
+  <header class="app-topbar">
+   <div><span class="top-kicker">ПАНЕЛЬ УПРАВЛЕНИЯ / ПЕСОЧНИЦА</span><strong id="view-title">Обзор</strong></div>
+   <div class="top-actions"><span class="badge demo-status"><span class="green-dot"></span> Simulation only</span><span class="top-time" id="demo-clock">00:00</span></div>
+  </header>
+  <main id="workspace" tabindex="-1" aria-live="polite"></main>
+  <footer class="app-footer"><span>ServiceHub · портфолио-версия · без доступа к ОС и сети</span><span id="footer-count">0 сервисов</span></footer>
+ </div>
+</div>
+<div class="toast-container" id="toasts" aria-live="polite"></div>
+<div class="modal-backdrop hidden" id="modal-backdrop" role="presentation">
+ <section class="dialog" role="dialog" aria-modal="true" aria-labelledby="dialog-title">
+  <div class="dialog-header"><h2 id="dialog-title">Добавить сервис</h2><button type="button" class="icon-button" id="modal-close" aria-label="Закрыть">×</button></div>
+  <form id="service-form">
+   <input type="hidden" name="edit_id" id="form-id">
+   <label>Название сервиса <input id="form-name" name="name" required maxlength="64" autocomplete="off" placeholder="Например: Demo API Gateway"></label>
+   <div class="form-grid"><label>Тип сервиса<select id="form-kind" name="kind"><option value="process">Процесс</option><option value="docker">Docker</option><option value="docker_compose">Docker Compose</option><option value="monitor_only">Наблюдение</option><option value="remote">Удалённый</option></select></label>
+   <label>Статус<select id="form-state" name="status"><option value="stopped">Остановлен</option><option value="running">Работает</option><option value="degraded">Проблема</option></select></label></div>
+   <label>Тестовое описание <input id="form-notes" name="notes" maxlength="140" autocomplete="off" placeholder="Вымышленные данные, без команды запуска"></label>
+   <label class="checkbox-label"><input id="form-autostart" name="autostart" type="checkbox"> Автозапуск (симуляция)</label>
+   <div class="form-hint">В этой версии нет исполняемых команд, путей к приложениям, реальных сетевых запросов или подключений к Docker. Любые изменения затрагивают только состояние этого браузера.</div>
+   <div class="dialog-actions"><button type="button" class="button light" id="form-cancel">Отмена</button><button type="submit" class="button primary" id="form-submit">Сохранить</button></div>
+  </form>
+ </section>
+</div>
+</body></html>
