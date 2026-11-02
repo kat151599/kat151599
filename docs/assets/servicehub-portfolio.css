@@ -1,0 +1,37 @@
+/* SH04: scoped portfolio styling. Never changes other project cards or demos. */
+.home .sh04-lab{padding:72px 0 78px}
+.home .sh04-lab-inner{display:block}
+.home .sh04-lab-intro{max-width:910px;margin-bottom:30px}
+.home .sh04-lab-intro h2{font-size:clamp(36px,5vw,62px);letter-spacing:-.055em;margin:10px 0 14px}
+.home .sh04-lab-intro p{max-width:780px;color:#c3dfcd;margin:0 0 14px;font-size:16px;line-height:1.75}
+.home .sh04-card-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-items:stretch;gap:22px}
+.home .sh04-card-grid .project-tile{min-width:0;display:flex;flex-direction:column}
+.home .sh04-card-grid .project-photo{height:230px}
+.home .sh04-card-grid .project-copy{flex:1;display:flex;flex-direction:column}
+.home .sh04-card-grid .project-copy p{min-height:0;flex:1}
+.home .sh04-card-grid .project-copy>a{margin-top:22px}
+.home .sh04-servicehub-tile .project-photo img{object-fit:cover;object-position:center top;background:#f4f6fc}
+.home .sh04-servicehub-tile .project-copy small{color:#a8f5d5}
+.sh04-spacer{height:22px}
+.sh04-case .sh04-demo-figure{margin-bottom:20px}
+.sh04-case .sh04-demo-figure .live-demo-window{--scale:.73;--preview-height:700px;background:#f4f6fc;border-color:#b7bbdf}
+.sh04-case .sh04-demo-figure .live-demo-window iframe{background:#f4f6fc}
+.sh04-proof{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:22px 0 4px}
+.sh04-proof>div{background:#112b30;border:1px solid #305859;border-radius:16px;padding:18px 18px 15px;min-width:0}
+.sh04-proof-icon{color:#a9f2d0;display:block;font-size:11px;letter-spacing:.14em;font-weight:800;margin-bottom:9px}
+.sh04-proof strong{display:block;font-size:15px;line-height:1.45;color:#e4f7ed}
+.sh04-proof p{margin:8px 0 0;color:#a6c7bc;font-size:12px;line-height:1.65}
+.sh04-case .aside .button{margin-top:13px}
+@media(max-width:850px){
+ .home .sh04-card-grid{grid-template-columns:1fr;max-width:570px;margin-inline:auto}
+ .home .sh04-lab{padding:52px 0 62px}
+ .sh04-proof{grid-template-columns:1fr}
+ .sh04-case .sh04-demo-figure .live-demo-window{--scale:.58;--preview-height:510px}
+}
+@media(max-width:520px){
+ .home .sh04-card-grid .project-photo{height:180px}
+ .home .sh04-lab-intro h2{font-size:38px}
+ .home .sh04-card-grid .project-copy{padding:20px}
+ .sh04-case .sh04-demo-figure .live-demo-window{--scale:.46;--preview-height:375px}
+ .sh04-proof>div{padding:15px}
+}
