@@ -176,7 +176,7 @@
 .mini-finance-theme .mini-finance-step small{font-size:11px;color:#447584}
 /* Move the existing REAL auto-calculated numbers above the input cards.
    The six #power/#generation/#storage/#cost/#benefit/#payback IDs stay intact. */
-.mini-finance-theme #view-proposal .form-grid>.result-card{order:-1}
+/* MAS22R2: no visual reordering; DOM 00–05 is authoritative. */
 .mini-finance-theme .card{
   border-radius:16px;background:#fff;border:1px solid #e6ebed;
   box-shadow:0 5px 20px #17283806;padding:24px;
@@ -315,4 +315,36 @@
   .mini-finance-theme *, .mini-finance-theme *::before,.mini-finance-theme *::after{
     scroll-behavior:auto!important;transition-duration:0s!important;
   }
+}
+
+/* MAS22R2 — keep all generator inputs easy to find:
+   the result is section 05, so it belongs AFTER sections 00–04.
+   Shrink decorative overview so the real parameters start near the fold.
+   All 22 original inputs and the 5 native views remain untouched. */
+.mini-finance-theme .mini-finance-dashboard {
+  gap:14px;
+  margin:14px 0 16px;
+}
+.mini-finance-theme .mini-finance-hero {
+  min-height:222px;
+  padding:22px 26px;
+}
+.mini-finance-theme .mini-finance-hero h2 {
+  font-size:clamp(27px,2.65vw,36px);
+  margin:9px 0;
+}
+.mini-finance-theme .mini-finance-hero-badge {margin-top:10px}
+.mini-finance-theme .mini-finance-steps {padding:17px 21px}
+.mini-finance-theme .mini-finance-steps h2 {
+  font-size:22px;
+  margin:5px 0 9px;
+}
+.mini-finance-theme .mini-finance-step {padding:4px 0}
+@media(max-width:620px) {
+  .mini-finance-theme .mini-finance-hero {
+    min-height:210px;
+    padding:18px 20px;
+  }
+  .mini-finance-theme .mini-finance-steps {padding:15px 18px}
+  .mini-finance-theme .mini-finance-hero h2 {font-size:29px}
 }
